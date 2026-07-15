@@ -9,7 +9,8 @@
    ================================================================ */
 :root {
   /* editable runtime tokens (token panel) */
-  --accent-h: 55;
+  --accent-h: 255;
+  --accent-s: 69;
   --radius: 4px;
   --border-w: 1px;
 
@@ -20,18 +21,18 @@
   --font-family-base: var(--font-body);
   --heading-font-family: var(--font-display);
 
-  /* charm primary ramp, derived from the live hue token */
-  --color-primary-50:  oklch(0.96 0.02 var(--accent-h)); --color-primary-50-alt:  #171a21;
-  --color-primary-100: oklch(0.92 0.05 var(--accent-h)); --color-primary-100-alt: #171a21;
-  --color-primary-200: oklch(0.84 0.09 var(--accent-h)); --color-primary-200-alt: #171a21;
-  --color-primary-300: oklch(0.73 0.14 var(--accent-h)); --color-primary-300-alt: #171a21;
-  --color-primary-400: oklch(0.62 0.19 var(--accent-h)); --color-primary-400-alt: #ffffff;
-  --color-primary-500: oklch(0.52 0.21 var(--accent-h)); --color-primary-500-alt: #ffffff;
-  --color-primary-600: oklch(0.45 0.20 var(--accent-h)); --color-primary-600-alt: #ffffff;
-  --color-primary-700: oklch(0.38 0.17 var(--accent-h)); --color-primary-700-alt: #ffffff;
-  --color-primary-800: oklch(0.30 0.13 var(--accent-h)); --color-primary-800-alt: #ffffff;
-  --color-primary-900: oklch(0.24 0.09 var(--accent-h)); --color-primary-900-alt: #ffffff;
-  --color-primary-950: oklch(0.18 0.06 var(--accent-h)); --color-primary-950-alt: #ffffff;
+  /* charm primary ramp, derived from the live hue & saturation tokens */
+  --color-primary-50:  oklch(0.96 calc(0.02 * var(--accent-s) / 100) var(--accent-h)); --color-primary-50-alt:  #171a21;
+  --color-primary-100: oklch(0.92 calc(0.05 * var(--accent-s) / 100) var(--accent-h)); --color-primary-100-alt: #171a21;
+  --color-primary-200: oklch(0.84 calc(0.09 * var(--accent-s) / 100) var(--accent-h)); --color-primary-200-alt: #171a21;
+  --color-primary-300: oklch(0.73 calc(0.14 * var(--accent-s) / 100) var(--accent-h)); --color-primary-300-alt: #171a21;
+  --color-primary-400: oklch(0.62 calc(0.19 * var(--accent-s) / 100) var(--accent-h)); --color-primary-400-alt: #ffffff;
+  --color-primary-500: oklch(0.52 calc(0.21 * var(--accent-s) / 100) var(--accent-h)); --color-primary-500-alt: #ffffff;
+  --color-primary-600: oklch(0.45 calc(0.20 * var(--accent-s) / 100) var(--accent-h)); --color-primary-600-alt: #ffffff;
+  --color-primary-700: oklch(0.38 calc(0.17 * var(--accent-s) / 100) var(--accent-h)); --color-primary-700-alt: #ffffff;
+  --color-primary-800: oklch(0.30 calc(0.13 * var(--accent-s) / 100) var(--accent-h)); --color-primary-800-alt: #ffffff;
+  --color-primary-900: oklch(0.24 calc(0.09 * var(--accent-s) / 100) var(--accent-h)); --color-primary-900-alt: #ffffff;
+  --color-primary-950: oklch(0.18 calc(0.06 * var(--accent-s) / 100) var(--accent-h)); --color-primary-950-alt: #ffffff;
 
   /* charm neutral ramp: porcelain */
   --color-neutral-0:   #ffffff; --color-neutral-50:  #f4f6f9; --color-neutral-100: #eceff4;
@@ -130,9 +131,9 @@
 }
 
 :root[data-theme="dark"] {
-  --color-primary-500: oklch(0.72 0.17 var(--accent-h));
-  --color-primary-600: oklch(0.78 0.15 var(--accent-h));
-  --color-primary-50:  oklch(0.28 0.06 var(--accent-h));
+  --color-primary-500: oklch(0.72 calc(0.17 * var(--accent-s) / 100) var(--accent-h));
+  --color-primary-600: oklch(0.78 calc(0.15 * var(--accent-s) / 100) var(--accent-h));
+  --color-primary-50:  oklch(0.28 calc(0.06 * var(--accent-s) / 100) var(--accent-h));
   --color-neutral-0:   #161922; --color-neutral-50:  #0f1116; --color-neutral-100: #1c2029;
   --color-neutral-200: #262b36; --color-neutral-300: #333947; --color-neutral-400: #4a5261;
   --color-neutral-500: #98a0ae; --color-neutral-900: #edeff4; --color-neutral-1000:#f4f6f9;
@@ -143,8 +144,8 @@
 }
 
 :root[data-theme="contrast"] {
-  --color-primary-500: oklch(0.85 0.19 var(--accent-h));
-  --color-primary-600: oklch(0.88 0.17 var(--accent-h));
+  --color-primary-500: oklch(0.85 calc(0.19 * var(--accent-s) / 100) var(--accent-h));
+  --color-primary-600: oklch(0.88 calc(0.17 * var(--accent-s) / 100) var(--accent-h));
   --color-primary-50: #000000;
   --color-neutral-0: #000000; --color-neutral-50: #000000; --color-neutral-100: #0d0d0d;
   --color-neutral-200: #ffffff; --color-neutral-300: #ffffff; --color-neutral-400: #d6d6d6;

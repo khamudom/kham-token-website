@@ -1,5 +1,5 @@
 /**
- * The token drawer: theme, accent hue, and corner radius.
+ * The token drawer: theme, accent hue/saturation, and corner radius.
  * Changes persist per browser (when storage is available);
  * Reset restores the defaults below.
  */
@@ -10,12 +10,13 @@ type ThemeName = 'light' | 'dark' | 'contrast';
 interface TokenState {
   theme: ThemeName;
   hue: number;
+  saturation: number;
   radius: number;
 }
 
 const TOKEN_KEY = 'kham.tokens';
 const DEFAULT_THEME: ThemeName = 'dark';
-const TOKEN_DEFAULTS = { hue: 55, radius: 4 } as const;
+const TOKEN_DEFAULTS = { hue: 255, saturation: 69, radius: 4 } as const;
 
 const root = document.documentElement;
 
@@ -37,6 +38,8 @@ export function initTokenPanel(): void {
   const toggle = byId<CharmButton>('tokens-toggle');
   const hue = byId<HTMLInputElement>('hue');
   const hueOut = byId('hue-out');
+  const saturation = byId<HTMLInputElement>('saturation');
+  const saturationOut = byId('saturation-out');
   const radius = byId<HTMLInputElement>('radius');
   const radiusOut = byId('radius-out');
 
@@ -72,9 +75,12 @@ export function initTokenPanel(): void {
   function applyTokens(): void {
     setTheme(tokens.theme);
     root.style.setProperty('--accent-h', String(tokens.hue));
+    root.style.setProperty('--accent-s', String(tokens.saturation));
     root.style.setProperty('--radius', `${tokens.radius}px`);
     hue.value = String(tokens.hue);
     hueOut.textContent = String(tokens.hue);
+    saturation.value = String(tokens.saturation);
+    saturationOut.textContent = `${tokens.saturation}%`;
     radius.value = String(tokens.radius);
     radiusOut.textContent = `${tokens.radius}px`;
     syncThemeRadios();
@@ -103,6 +109,13 @@ export function initTokenPanel(): void {
     tokens.hue = Number(hue.value);
     root.style.setProperty('--accent-h', hue.value);
     hueOut.textContent = hue.value;
+    saveTokens();
+  });
+
+  saturation.addEventListener('input', () => {
+    tokens.saturation = Number(saturation.value);
+    root.style.setProperty('--accent-s', saturation.value);
+    saturationOut.textContent = `${saturation.value}%`;
     saveTokens();
   });
 
