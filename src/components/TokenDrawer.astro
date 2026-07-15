@@ -1,0 +1,22 @@
+<!-- The live theme editor: a ch-dialog drawer driving Charm's token layer -->
+<!-- TOKEN PANEL: a Charm dialog drawer driving Charm's own tokens -->
+<ch-dialog id="token-pane" heading="design.tokens" position="end" close-button-label="Close token panel">
+  <div class="pane-body">
+    <p class="intro">This is the site's live theme editor. Each control below is a <b>design token</b>: a named style decision, like the accent color or corner radius, that every part of this page derives from. Change one and watch the whole system follow.</p>
+    <ch-radio-group label="color.scheme" name="theme" id="theme-group" layout="horizontal">
+      <ch-radio value="light" label="light"></ch-radio>
+      <ch-radio value="dark" label="dark"></ch-radio>
+      <ch-radio value="contrast" label="hi-con"></ch-radio>
+    </ch-radio-group>
+    <div>
+      <label class="rng" for="hue">accent.hue <output id="hue-out">55</output></label>
+      <input type="range" id="hue" min="0" max="360" value="55" step="1" />
+    </div>
+    <div>
+      <label class="rng" for="radius">shape.radius <output id="radius-out">4px</output></label>
+      <input type="range" id="radius" min="0" max="26" value="4" step="1" />
+    </div>
+    <ch-button class="kh-btn-ghost kh-btn-compact" id="tokens-reset">Reset to defaults</ch-button>
+    <p class="note">This drawer is a <b>ch-dialog</b>, the radios are <b>ch-radio</b>, and every button, card, and badge on this page is a Charm component. The sliders mutate Charm's token layer directly, and the system re-themes itself live. Under the hood, each token is a CSS custom property on <b>:root</b>, and your changes are saved in this browser. Go ahead, break it.</p>
+  </div>
+</ch-dialog>

@@ -1,0 +1,80 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+<Base title="Microsoft Edge — case study · Kham Udom" description="Web components for Microsoft Edge on FAST: Shopping, News Feed, Vertical Tabs, and DevTools high-contrast accessibility upstreamed to Chromium. A case study by Kham Udom.">
+  <main id="main">
+
+<section class="case-page" id="case-edge" aria-label="Case study: Microsoft Edge">
+    <div class="wrap" style="padding-block: clamp(2.5rem, 6vw, 4rem);">
+      <ch-breadcrumb label="Breadcrumb">
+        <ch-breadcrumb-item href="/">kham.udom</ch-breadcrumb-item>
+        <ch-breadcrumb-item href="/#work">work</ch-breadcrumb-item>
+        <ch-breadcrumb-item current="page">microsoft-edge</ch-breadcrumb-item>
+      </ch-breadcrumb>
+
+      <div class="case-head">
+        <div>
+          <h1 tabindex="-1" class="case-title">Microsoft Edge Browser — web components &amp; UX enhancements</h1>
+          <div class="chips">
+            <ch-badge>CSS</ch-badge><ch-badge>FAST</ch-badge><ch-badge>HTML</ch-badge><ch-badge>JavaScript</ch-badge><ch-badge>React</ch-badge><ch-badge>TypeScript</ch-badge>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-section" style="margin-top: 2rem;">
+        <p><strong>The work.</strong> I built reusable, performant web components for Microsoft Edge using the FAST framework, extending Fluent UI Web Components to support key browser features. Everything here shipped in production inside Edge, and most of it was built for other teams to consume in their own surfaces.</p>
+      </div>
+
+      <div class="case-section">
+        <p class="eyebrow"><span class="tok">case</span>.scope — what I owned</p>
+        <h2>Scope</h2>
+        <ol class="flow-steps">
+          <li><span><strong>Edge Shopping.</strong> Developed the coupon, cashback, and shopping-recommendation components, consumed and implemented by partner teams.</span></li>
+          <li><span><strong>News Feed.</strong> Iterated on the article, info-pane-ad, and native-ad components, the main pieces you see on the feed.</span></li>
+          <li><span><strong>Vertical Tabs.</strong> Prototyped motion behaviors for the tab panel's slide-out and slide-in animation.</span></li>
+          <li><span><strong>Developer Tools accessibility.</strong> Made DevTools visually accessible in Windows high contrast (forced-colors) mode, in consultation with the Edge DevTools and Chromium teams.</span></li>
+        </ol>
+      </div>
+
+      <div class="case-section">
+        <p class="eyebrow"><span class="tok">case</span>.shopping — helping people save</p>
+        <h2>Microsoft Edge Shopping</h2>
+        <p>A browser feature that gives online shoppers multiple ways to save money. I built the coupon, cashback, and shopping-recommendation components that power it, designed as reusable pieces that partner teams consume and implement in their own surfaces.</p>
+        <div class="shot"><figure><img src="/images/edge-shopping.jpg" alt="Edge Shopping flyout on a retail site showing 15 coupons found with promo codes" loading="lazy" /><figcaption>fig 1 — the shopping flyout component, live on a retail site.</figcaption></figure></div>
+      </div>
+
+      <div class="case-section">
+        <p class="eyebrow"><span class="tok">case</span>.feed — the front page of the browser</p>
+        <h2>News Feed</h2>
+        <p>Edge ships a customizable news feed on the new tab page. I helped iterate on the article, info-pane-ad, and native-ad components, the primary building blocks of everything you see on the feed.</p>
+        <div class="shot"><figure><img src="/images/edge-newsfeed.jpg" alt="Edge News Feed showing a grid of article cards, ads, and sports categories" loading="lazy" /><figcaption>fig 2 — News Feed 1.0.</figcaption></figure></div>
+      </div>
+
+      <div class="case-section">
+        <p class="eyebrow"><span class="tok">case</span>.tabs — motion as a spec</p>
+        <h2>Vertical Tabs</h2>
+        <p>Vertical Tabs lets users dock their tabs along the side of the browser window. I built a working prototype so the motion designer could iterate directly on the slide-out and slide-in animation of the collapsed tab panel, tuning the real thing instead of an approximation.</p>
+        <div class="shot"><figure><img src="/images/edge-verticaltabs.jpg" alt="Microsoft Edge browser with the vertical tabs panel docked on the left side" loading="lazy" /><figcaption>fig 3 — vertical tabs.</figcaption></figure></div>
+      </div>
+
+      <div class="case-section">
+        <p class="eyebrow"><span class="tok">case</span>.a11y — beyond edge, into chromium</p>
+        <h2>High contrast for Developer Tools</h2>
+        <p>This one reached past Edge into Chromium itself. With forced-colors mode on (Windows high contrast), parts of Developer Tools were visually broken. Working with the Edge DevTools and Chromium teams, I applied forced-colors fixes to each broken element. And because the fixes landed in Chromium, every browser built on it got the benefit, not just Edge.</p>
+        <div class="shot"><figure><img src="/images/edge-highcontrast.jpg" alt="Chromium Developer Tools rendered in the high contrast dark theme with accessible colors" loading="lazy" /><figcaption>fig 4 — DevTools in the high-contrast dark theme.</figcaption></figure></div>
+      </div>
+
+      <div class="case-section">
+        <p class="eyebrow"><span class="tok">case</span>.transfer — what this work makes me good at</p>
+        <h2>What transfers</h2>
+        <p>I know what it takes to build components that teams I've never met can pick up and use, because that was the job. When your code ships to a few hundred million people, you learn to care about the unglamorous parts: documentation, edge cases, performance. And when a fix belongs upstream, I put it there. The high contrast work went into Chromium, so it helps every browser built on it.</p>
+      </div>
+
+      <div class="case-footer-nav">
+        <ch-button class="kh-btn-ghost" href="/#work">← Back to all work</ch-button>
+      </div>
+    </div>
+  </section>
+
+  </main>
+</Base>

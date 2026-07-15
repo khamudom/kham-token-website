@@ -1,0 +1,40 @@
+---
+import Header from '../components/Header.astro';
+import TokenDrawer from '../components/TokenDrawer.astro';
+import '@charm-ux/core/dist/themes/charm/reset.css';
+import '@charm-ux/core/dist/themes/charm/theme.css';
+import '../styles/theme.css';
+import '../styles/site.css';
+import tokenBoot from '../lib/token-boot.js?raw';
+
+interface Props {
+  title: string;
+  description: string;
+}
+const { title, description } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script is:inline set:html={tokenBoot}></script>
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <link rel="icon" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <Header />
+    <slot />
+    <TokenDrawer />
+    <script>
+      import '../scripts/site';
+    </script>
+  </body>
+</html>

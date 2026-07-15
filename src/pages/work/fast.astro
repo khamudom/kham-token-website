@@ -1,0 +1,76 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+<Base title="FAST — case study · Kham Udom" description="Contributions to Microsoft's open-source FAST framework: high-contrast accessibility across FAST and Fluent UI Web Components, and the fast.design website. A case study by Kham Udom.">
+  <main id="main">
+
+<section class="case-page" id="case-fast" aria-label="Case study: FAST">
+    <div class="wrap" style="padding-block: clamp(2.5rem, 6vw, 4rem);">
+      <ch-breadcrumb label="Breadcrumb">
+        <ch-breadcrumb-item href="/">kham.udom</ch-breadcrumb-item>
+        <ch-breadcrumb-item href="/#work">work</ch-breadcrumb-item>
+        <ch-breadcrumb-item current="page">fast</ch-breadcrumb-item>
+      </ch-breadcrumb>
+
+      <div class="case-head">
+        <div>
+          <h1 tabindex="-1" class="case-title">FAST — UI framework for the web</h1>
+          <div class="chips">
+            <ch-badge>Accessibility</ch-badge><ch-badge>FAST</ch-badge><ch-badge>Web Components</ch-badge><ch-badge>Open Source</ch-badge><ch-badge>React</ch-badge><ch-badge>TypeScript</ch-badge><ch-badge>CSS</ch-badge><ch-badge>HTML</ch-badge>
+          </div>
+        </div>
+        <div class="case-actions">
+          <ch-button class="kh-btn-primary" href="https://fast.design/" target="_blank">fast.design ↗</ch-button>
+          <ch-button class="kh-btn-ghost" href="https://github.com/microsoft/fast" target="_blank">GitHub ↗</ch-button>
+        </div>
+      </div>
+
+      <div class="case-section" style="margin-top: 2rem;">
+        <p><strong>The work.</strong> FAST is Microsoft's open-source project for building adaptive, standards-based web components. I contributed to building and maintaining accessible components with React and Web Component technology, collaborating with design and engineering to own, build, and maintain Web Components across multiple Microsoft Edge web experiences using FAST and Fluent UI Web Components.</p>
+      </div>
+
+      <div class="case-section">
+        <p class="eyebrow"><span class="tok">case</span>.scope — what I owned</p>
+        <h2>Scope</h2>
+        <ol class="flow-steps">
+          <li><span><strong>Edge web experiences.</strong> Owned, built, and maintained Web Components for multiple Edge surfaces, working across design and engineering with FAST and Fluent UI Web Components.</span></li>
+          <li><span><strong>The FAST website.</strong> Contributed to creating <code>fast.design</code> while leading a few interns. I built the navigation and section-header components.</span></li>
+          <li><span><strong>High contrast, both libraries.</strong> Owned the high-contrast accessibility work for both the FAST and Fluent UI component libraries.</span></li>
+          <li><span><strong>Assistive-tech verification.</strong> Tested components in high contrast, keyboard navigation, and screen readers (VoiceOver, Narrator, and JAWS) against the patterns in the ARIA Authoring Practices Guide.</span></li>
+        </ol>
+      </div>
+
+      <div class="case-section">
+        <p class="eyebrow"><span class="tok">case</span>.website — the front door</p>
+        <h2>The FAST website</h2>
+        <p>I contributed to building fast.design, the project's public face, while mentoring a few interns through their contributions. I owned the site navigation and the section-header components.</p>
+        <div class="shot"><figure><img src="/images/fast-website.jpg" alt="The fast.design website hero: The adaptive interface system for modern web experiences, over flowing wave artwork" loading="lazy" /><figcaption>fig 1 — fast.design.</figcaption></figure></div>
+      </div>
+
+      <div class="case-section">
+        <p class="eyebrow"><span class="tok">case</span>.a11y — the biggest contribution</p>
+        <h2>Accessibility in mind</h2>
+        <p>My biggest contribution was owning the high-contrast work for both the FAST and Fluent UI libraries. I made sure components met accessibility standards by testing where it counts: in Windows high contrast, with keyboard-only navigation, and in real screen readers (VoiceOver, Narrator, and JAWS), building against the best practices and patterns of the <a href="https://www.w3.org/WAI/ARIA/apg/" target="_blank" rel="noopener">ARIA Authoring Practices Guide</a>.</p>
+        <p>Then I wrote it down: a guidance document to help the open-source community and internal partners build accessible components with high contrast in mind, so the standard didn't depend on me being in the room.</p>
+      </div>
+
+      <div class="case-section">
+        <p class="eyebrow"><span class="tok">case</span>.today — open source keeps moving</p>
+        <h2>FAST, then and now</h2>
+        <p>FAST has changed a lot since I worked on it, which is what you want from a healthy open-source project. The components I built shipped to Edge users, and I'm still on the <a href="https://github.com/microsoft/fast/graphs/contributors" target="_blank" rel="noopener">contributor list</a>.</p>
+      </div>
+
+      <div class="case-section">
+        <p class="eyebrow"><span class="tok">case</span>.transfer — what this work makes me good at</p>
+        <h2>What transfers</h2>
+        <p>I test with actual screen readers, VoiceOver, Narrator, and JAWS, because automated checks miss most of what matters. High contrast is the kind of work many engineers avoid, and I ended up owning it for two libraries. I mentored interns while shipping. And I documented the accessibility guidance so the standard wouldn't depend on me.</p>
+      </div>
+
+      <div class="case-footer-nav">
+        <ch-button class="kh-btn-ghost" href="/#work">← Back to all work</ch-button>
+      </div>
+    </div>
+  </section>
+
+  </main>
+</Base>

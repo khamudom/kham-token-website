@@ -1,0 +1,169 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+<Base title="The Recipe Room — case study · Kham Udom" description="Full-stack recipe management PWA: Next.js 15, Supabase with Row Level Security, and gpt-4o recipe extraction. A case study by Kham Udom.">
+  <main id="main">
+
+<section class="case-page" id="case-recipe-room" aria-label="Case study: The Recipe Room">
+    <div class="wrap" style="padding-block: clamp(2.5rem, 6vw, 4rem);">
+      <ch-breadcrumb label="Breadcrumb">
+        <ch-breadcrumb-item href="/">kham.udom</ch-breadcrumb-item>
+        <ch-breadcrumb-item href="/#work">work</ch-breadcrumb-item>
+        <ch-breadcrumb-item current="page">the-recipe-room</ch-breadcrumb-item>
+      </ch-breadcrumb>
+
+      <div class="case-head">
+        <div>
+          <h1 tabindex="-1" class="case-title">The Recipe Room — recipe management system</h1>
+          <div class="chips">
+            <ch-badge>Next.js 15</ch-badge><ch-badge>TypeScript</ch-badge><ch-badge>Supabase</ch-badge><ch-badge>OpenAI</ch-badge><ch-badge>React Query</ch-badge><ch-badge>Progressive Web App</ch-badge>
+          </div>
+        </div>
+        <div class="case-actions">
+          <ch-button class="kh-btn-primary" href="https://www.thereciperoom.net/" target="_blank">View site ↗</ch-button>
+          <ch-button class="kh-btn-ghost" href="https://github.com/khamudom/the-recipe-room" target="_blank">View source ↗</ch-button>
+        </div>
+      </div>
+
+      <div class="case-section" style="margin-top: 2rem;">
+        <p><strong>Why I built it.</strong> I love cooking, and I collect recipe ideas everywhere: web pages, social media, cookbook photos. My "system" was bookmarks and screenshots, which meant scrolling through hundreds of images every time I wanted to cook something again. The Recipe Room replaces that with one searchable place: photograph any recipe and AI extracts it into structured, editable data. It's an ongoing project, and it doubles as my proving ground for owning a system end to end: schema, API, auth, AI pipeline, and UI.</p>
+      </div>
+
+      <div class="case-section">
+        <p class="eyebrow"><span class="tok">case</span>.architecture — the whole system</p>
+        <h2>System architecture</h2>
+        <p>Three trust zones: the browser, my server code, and third-party services. The client never talks to OpenAI directly and never holds a privileged database key. AI calls, image uploads, and search are brokered by API routes on the server. Recipe reads and writes go from the browser to Supabase directly with the public anon key, and Postgres Row Level Security does the authorization: write policies scope rows to the signed-in user, and a few read policies expose featured recipes publicly.</p>
+        <div class="archfig">
+          <figure>
+            <svg viewBox="0 0 920 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Full architecture diagram. The browser runs a Next.js 15 progressive web app with a persisted React Query cache, Redux Toolkit for UI state, CSS Modules design tokens, and a service worker for offline use. The browser talks to Supabase directly with the public anon key for auth and recipe reads and writes, authorized by Postgres row level security. App Router API routes behind session middleware handle the AI calls (analyze-recipe, chef, extract-recipe-url, all using gpt-4o), image upload to storage, search, and category counts.">
+              <defs>
+                <marker id="arr2" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M0,0 L8,4 L0,8 z" fill="var(--accent)"/>
+                </marker>
+              </defs>
+
+              <!-- zone labels -->
+              <text class="sd-item" x="30" y="36">zone: browser</text>
+              <text class="sd-item" x="330" y="36">zone: server (Vercel)</text>
+              <text class="sd-item" x="670" y="36">zone: managed services</text>
+              <line x1="300" y1="20" x2="300" y2="410" stroke="var(--line)" stroke-dasharray="3 6"/>
+              <line x1="640" y1="20" x2="640" y2="410" stroke="var(--line)" stroke-dasharray="3 6"/>
+
+              <!-- client -->
+              <rect class="sd-box" x="30" y="60" width="230" height="220" rx="10"/>
+              <text class="sd-title" x="46" y="88">client — installable pwa</text>
+              <text class="sd-item" x="46" y="114">Next.js 15 · App Router</text>
+              <text class="sd-item" x="46" y="136">React Query · persisted cache</text>
+              <text class="sd-item" x="46" y="158">Redux Toolkit · ui state</text>
+              <text class="sd-item" x="46" y="180">CSS Modules · design tokens</text>
+              <text class="sd-item" x="46" y="202">service worker · offline</text>
+              <text class="sd-item" x="46" y="224">Swiper · Lottie preload</text>
+              <text class="sd-item" x="46" y="256">holds no secrets</text>
+
+              <!-- middleware -->
+              <rect class="sd-box" x="330" y="60" width="110" height="220" rx="10"/>
+              <text class="sd-title" x="346" y="88">middleware</text>
+              <text class="sd-item" x="346" y="114">session check</text>
+              <text class="sd-item" x="346" y="136">route guard</text>
+              <text class="sd-item" x="346" y="158">redirects</text>
+
+              <!-- api routes -->
+              <rect class="sd-box" x="455" y="60" width="175" height="220" rx="10"/>
+              <text class="sd-title" x="471" y="88">api routes</text>
+              <text class="sd-item" x="471" y="114">/api/analyze-recipe</text>
+              <text class="sd-item" x="471" y="132">/api/chef</text>
+              <text class="sd-item" x="471" y="150">/api/extract-recipe-url</text>
+              <text class="sd-item" x="471" y="168">/api/upload-image</text>
+              <text class="sd-item" x="471" y="186">/api/recipes · search</text>
+              <text class="sd-item" x="471" y="204">/api/category-counts</text>
+              <text class="sd-item" x="471" y="236">validated JSON · errors</text>
+
+              <!-- supabase -->
+              <rect class="sd-box" x="670" y="60" width="220" height="140" rx="10"/>
+              <text class="sd-title" x="686" y="88">supabase</text>
+              <text class="sd-item" x="686" y="114">Auth · JWT sessions</text>
+              <text class="sd-item" x="686" y="136">Postgres + RLS</text>
+              <text class="sd-item" x="686" y="154">owner-scoped policies</text>
+              <text class="sd-item" x="686" y="176">Storage · recipe images</text>
+
+              <!-- openai -->
+              <rect class="sd-box" x="670" y="230" width="220" height="110" rx="10"/>
+              <text class="sd-title" x="686" y="258">openai</text>
+              <text class="sd-item" x="686" y="278">gpt-4o · photo → recipe</text>
+              <text class="sd-item" x="686" y="300">gpt-4o · url → recipe</text>
+              <text class="sd-item" x="686" y="322">gpt-4o · Chef Gusto chat</text>
+
+              <!-- flows -->
+              <line class="sd-flow" x1="260" y1="150" x2="324" y2="150" marker-end="url(#arr2)"/>
+              <text class="sd-flow-lbl" x="266" y="142">https</text>
+              <line class="sd-flow" x1="440" y1="150" x2="464" y2="150" marker-end="url(#arr2)"/>
+              <line class="sd-flow" x1="630" y1="120" x2="664" y2="115" marker-end="url(#arr2)"/>
+              <text class="sd-flow-lbl" x="628" y="54">storage · search</text>
+              <line class="sd-flow" x1="630" y1="230" x2="664" y2="275" marker-end="url(#arr2)"/>
+              <text class="sd-flow-lbl" x="548" y="300">prompt + image</text>
+              <line class="sd-flow" x1="145" y1="280" x2="145" y2="380 " />
+              <line class="sd-flow" x1="145" y1="380" x2="902" y2="380"/>
+              <line class="sd-flow" x1="902" y1="380" x2="902" y2="150"/>
+              <line class="sd-flow" x1="902" y1="150" x2="894" y2="150" marker-end="url(#arr2)"/>
+              <text class="sd-flow-lbl" x="160" y="374">supabase-js · auth + recipe CRUD · RLS-enforced</text>
+            </svg>
+            <figcaption>fig 1 — secrets live server-side, and ownership is enforced by Row Level Security in the database, where a client bug cannot bypass it.</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="case-section">
+        <p class="eyebrow"><span class="tok">case</span>.flow — the interesting path</p>
+        <h2>Request flow: photo in, recipe out</h2>
+        <p>The signature feature is turning a photo of any recipe, a cookbook page or a handwritten card, into structured data. Here's the full round trip:</p>
+        <ol class="flow-steps">
+          <li><span><strong>Upload.</strong> The user photographs a recipe. The client compresses and posts it to <code>/api/analyze-recipe</code>, never to OpenAI directly, so the API key stays server-side.</span></li>
+          <li><span><strong>Extract.</strong> The route sends the image to gpt-4o with a prompt that demands a strict JSON shape: title, ingredients, instructions, prep and cook time, servings, category.</span></li>
+          <li><span><strong>Validate.</strong> The response is parsed and validated against the <code>Recipe</code> type before it ever reaches the client. Malformed AI output fails gracefully with an actionable error, not a broken form.</span></li>
+          <li><span><strong>Review.</strong> The extracted recipe pre-fills the editing form. AI output is a draft, not a commit. The user confirms and corrects before anything is saved.</span></li>
+          <li><span><strong>Persist.</strong> On save, the recipe is written to Postgres straight from the browser with supabase-js. The Row Level Security policy checks ownership in the database, so client code cannot write into someone else's collection.</span></li>
+        </ol>
+      </div>
+
+      <div class="case-section">
+        <p class="eyebrow"><span class="tok">case</span>.decisions — tradeoffs I made on purpose</p>
+        <h2>Architecture decisions</h2>
+        <div class="principles" style="margin-top: 1.5rem;">
+          <ch-card>
+            <span class="k">decision.security</span>
+            <h3>Authorization lives in the database</h3>
+            <p>Recipe reads and writes go straight from the browser with supabase-js, so Row Level Security is the authorization layer. Write policies scope rows to the signed-in user, and a few read policies deliberately expose featured recipes to everyone. Middleware only guards protected pages. The tradeoff is writing and testing SQL policies alongside app code, but a policy in Postgres cannot be bypassed by a bug in my UI, and it removed an entire tier of CRUD endpoints I would otherwise have to build and maintain.</p>
+          </ch-card>
+          <ch-card>
+            <span class="k">decision.state</span>
+            <h3>Server state is a cache, not a store</h3>
+            <p>Recipes are server-owned data, so they live in React Query, with the cache persisted to storage so the app opens with recipes instead of spinners. Mutations write through on success and invalidate their queries, which keeps the cache honest without optimistic bookkeeping. Redux Toolkit handles what is genuinely client state: the search controls and the chef widget. Two tools, each doing the job it was built for.</p>
+          </ch-card>
+          <ch-card>
+            <span class="k">decision.ai</span>
+            <h3>AI behind an API, treated as untrusted input</h3>
+            <p>Three routes, photo analysis, URL extraction, and the chef chat, all call gpt-4o server-side, so the API key never reaches the browser. Model output is validated like any user input and lands in a review step before persisting: useful when it works, harmless when it hallucinates. And because the client only knows the routes, swapping the model never touches the UI.</p>
+          </ch-card>
+        </div>
+      </div>
+
+      <div class="case-section">
+        <p class="eyebrow"><span class="tok">case</span>.frontend — where the ux engineering shows</p>
+        <h2>Frontend architecture</h2>
+        <p>The UI is a vintage cookbook: warm cream, classic recipe cards, and handwritten-feeling type, built on a token layer in <code>design-system/tokens</code> so the theme is data, not scattered CSS. I also put focused work into how fast it feels: skeleton loaders match the final layout so nothing shifts, Lottie animations are preloaded, images run through Next.js optimization, and routes code-split on their own. Offline, the service worker keeps the app usable in the kitchen, which is where a recipe app actually gets used, on a flour-covered phone with one hand.</p>
+      </div>
+
+      <div class="case-section">
+        <p class="eyebrow"><span class="tok">case</span>.transfer — what this work makes me good at</p>
+        <h2>What transfers</h2>
+        <p>I can take a product from database schema to shipped UI on my own. I give model output the same scrutiny as user input. Everything the AI returns is validated and reviewed before it's saved. I put the security checks in the database, where they still hold if my application code has a bug. And I pay close attention to how fast an app <em>feels</em>, which is a different problem from how fast it benchmarks.</p>
+      </div>
+
+      <div class="case-footer-nav">
+        <ch-button class="kh-btn-ghost" href="/#work">← Back to all work</ch-button>
+      </div>
+    </div>
+  </section>
+
+  </main>
+</Base>
