@@ -1,4 +1,3 @@
-
 /* ================================================================
    KHAM.UDOM THEME - a Charm UX theme override.
    This portfolio runs on @charm-ux/core, an open-source design
@@ -15,31 +14,72 @@
   --border-w: 1px;
 
   /* type */
-  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-display: "Schibsted Grotesk", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
   --font-family-base: var(--font-body);
   --heading-font-family: var(--font-display);
 
   /* charm primary ramp, derived from the live hue & saturation tokens */
-  --color-primary-50:  oklch(0.96 calc(0.02 * var(--accent-s) / 100) var(--accent-h)); --color-primary-50-alt:  #171a21;
-  --color-primary-100: oklch(0.92 calc(0.05 * var(--accent-s) / 100) var(--accent-h)); --color-primary-100-alt: #171a21;
-  --color-primary-200: oklch(0.84 calc(0.09 * var(--accent-s) / 100) var(--accent-h)); --color-primary-200-alt: #171a21;
-  --color-primary-300: oklch(0.73 calc(0.14 * var(--accent-s) / 100) var(--accent-h)); --color-primary-300-alt: #171a21;
-  --color-primary-400: oklch(0.62 calc(0.19 * var(--accent-s) / 100) var(--accent-h)); --color-primary-400-alt: #ffffff;
-  --color-primary-500: oklch(0.52 calc(0.21 * var(--accent-s) / 100) var(--accent-h)); --color-primary-500-alt: #ffffff;
-  --color-primary-600: oklch(0.45 calc(0.20 * var(--accent-s) / 100) var(--accent-h)); --color-primary-600-alt: #ffffff;
-  --color-primary-700: oklch(0.38 calc(0.17 * var(--accent-s) / 100) var(--accent-h)); --color-primary-700-alt: #ffffff;
-  --color-primary-800: oklch(0.30 calc(0.13 * var(--accent-s) / 100) var(--accent-h)); --color-primary-800-alt: #ffffff;
-  --color-primary-900: oklch(0.24 calc(0.09 * var(--accent-s) / 100) var(--accent-h)); --color-primary-900-alt: #ffffff;
-  --color-primary-950: oklch(0.18 calc(0.06 * var(--accent-s) / 100) var(--accent-h)); --color-primary-950-alt: #ffffff;
+  --color-primary-50: oklch(
+    0.96 calc(0.02 * var(--accent-s) / 100) var(--accent-h)
+  );
+  --color-primary-50-alt: #171a21;
+  --color-primary-100: oklch(
+    0.92 calc(0.05 * var(--accent-s) / 100) var(--accent-h)
+  );
+  --color-primary-100-alt: #171a21;
+  --color-primary-200: oklch(
+    0.84 calc(0.09 * var(--accent-s) / 100) var(--accent-h)
+  );
+  --color-primary-200-alt: #171a21;
+  --color-primary-300: oklch(
+    0.73 calc(0.14 * var(--accent-s) / 100) var(--accent-h)
+  );
+  --color-primary-300-alt: #171a21;
+  --color-primary-400: oklch(
+    0.62 calc(0.19 * var(--accent-s) / 100) var(--accent-h)
+  );
+  --color-primary-400-alt: #ffffff;
+  --color-primary-500: oklch(
+    0.52 calc(0.21 * var(--accent-s) / 100) var(--accent-h)
+  );
+  --color-primary-500-alt: #ffffff;
+  --color-primary-600: oklch(
+    0.45 calc(0.2 * var(--accent-s) / 100) var(--accent-h)
+  );
+  --color-primary-600-alt: #ffffff;
+  --color-primary-700: oklch(
+    0.38 calc(0.17 * var(--accent-s) / 100) var(--accent-h)
+  );
+  --color-primary-700-alt: #ffffff;
+  --color-primary-800: oklch(
+    0.3 calc(0.13 * var(--accent-s) / 100) var(--accent-h)
+  );
+  --color-primary-800-alt: #ffffff;
+  --color-primary-900: oklch(
+    0.24 calc(0.09 * var(--accent-s) / 100) var(--accent-h)
+  );
+  --color-primary-900-alt: #ffffff;
+  --color-primary-950: oklch(
+    0.18 calc(0.06 * var(--accent-s) / 100) var(--accent-h)
+  );
+  --color-primary-950-alt: #ffffff;
 
   /* charm neutral ramp: porcelain */
-  --color-neutral-0:   #ffffff; --color-neutral-50:  #f4f6f9; --color-neutral-100: #eceff4;
-  --color-neutral-200: #e2e6ee; --color-neutral-300: #cdd3de; --color-neutral-400: #a7aeba;
-  --color-neutral-500: #59606e; --color-neutral-600: #474d59; --color-neutral-700: #363b45;
-  --color-neutral-800: #262a32; --color-neutral-900: #171a21; --color-neutral-950: #101318;
-  --color-neutral-1000:#0f1116;
+  --color-neutral-0: #ffffff;
+  --color-neutral-50: #f4f6f9;
+  --color-neutral-100: #eceff4;
+  --color-neutral-200: #e2e6ee;
+  --color-neutral-300: #cdd3de;
+  --color-neutral-400: #a7aeba;
+  --color-neutral-500: #59606e;
+  --color-neutral-600: #474d59;
+  --color-neutral-700: #363b45;
+  --color-neutral-800: #262a32;
+  --color-neutral-900: #171a21;
+  --color-neutral-950: #101318;
+  --color-neutral-1000: #0f1116;
 
   /* site aliases (map custom layout onto the charm scales) */
   --bg: var(--color-neutral-50);
@@ -52,8 +92,9 @@
   --accent-ink: var(--color-primary-600);
   --accent-soft: var(--color-primary-50);
   --accent-contrast: #ffffff;
-  --shadow: 0 1px 2px rgb(23 26 33 / 0.05), 0 12px 32px -12px rgb(23 26 33 / 0.14);
-  --grid-dot: rgb(23 26 33 / 0.10);
+  --shadow:
+    0 1px 2px rgb(23 26 33 / 0.05), 0 12px 32px -12px rgb(23 26 33 / 0.14);
+  --grid-dot: rgb(23 26 33 / 0.1);
 
   /* charm shape & component tokens ← live radius token */
   --border-radius-sm: calc(var(--radius) * 0.45);
@@ -81,9 +122,12 @@
   --card-heading-weight: 620;
   --card-content-gap: 0.5rem;
   --card-padding: 1.35rem 1.6rem;
-  --card-body-padding-x: 1.6rem;  --card-body-padding-y: 0.35rem;
-  --card-heading-padding-x: 1.6rem; --card-heading-padding-y: 0.35rem;
-  --card-footer-padding-x: 1.6rem; --card-footer-padding-y: 1.2rem;
+  --card-body-padding-x: 1.6rem;
+  --card-body-padding-y: 0.35rem;
+  --card-heading-padding-x: 1.6rem;
+  --card-heading-padding-y: 0.35rem;
+  --card-footer-padding-x: 1.6rem;
+  --card-footer-padding-y: 1.2rem;
 
   --badge-border-radius: 999px;
   --badge-bg-color: var(--surface-2);
@@ -131,25 +175,47 @@
 }
 
 :root[data-theme="dark"] {
-  --color-primary-500: oklch(0.72 calc(0.17 * var(--accent-s) / 100) var(--accent-h));
-  --color-primary-600: oklch(0.78 calc(0.15 * var(--accent-s) / 100) var(--accent-h));
-  --color-primary-50:  oklch(0.28 calc(0.06 * var(--accent-s) / 100) var(--accent-h));
-  --color-neutral-0:   #161922; --color-neutral-50:  #0f1116; --color-neutral-100: #1c2029;
-  --color-neutral-200: #262b36; --color-neutral-300: #333947; --color-neutral-400: #4a5261;
-  --color-neutral-500: #98a0ae; --color-neutral-900: #edeff4; --color-neutral-1000:#f4f6f9;
+  --color-primary-500: oklch(
+    0.72 calc(0.17 * var(--accent-s) / 100) var(--accent-h)
+  );
+  --color-primary-600: oklch(
+    0.78 calc(0.15 * var(--accent-s) / 100) var(--accent-h)
+  );
+  --color-primary-50: oklch(
+    0.28 calc(0.06 * var(--accent-s) / 100) var(--accent-h)
+  );
+  --color-neutral-0: #161922;
+  --color-neutral-50: #0f1116;
+  --color-neutral-100: #1c2029;
+  --color-neutral-200: #262b36;
+  --color-neutral-300: #333947;
+  --color-neutral-400: #4a5261;
+  --color-neutral-500: #98a0ae;
+  --color-neutral-900: #edeff4;
+  --color-neutral-1000: #f4f6f9;
   --accent-contrast: #0f1116;
   --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 16px 40px -16px rgb(0 0 0 / 0.55);
-  --grid-dot: rgb(237 239 244 / 0.10);
+  --grid-dot: rgb(237 239 244 / 0.1);
   color-scheme: dark;
 }
 
 :root[data-theme="contrast"] {
-  --color-primary-500: oklch(0.85 calc(0.19 * var(--accent-s) / 100) var(--accent-h));
-  --color-primary-600: oklch(0.88 calc(0.17 * var(--accent-s) / 100) var(--accent-h));
+  --color-primary-500: oklch(
+    0.85 calc(0.19 * var(--accent-s) / 100) var(--accent-h)
+  );
+  --color-primary-600: oklch(
+    0.88 calc(0.17 * var(--accent-s) / 100) var(--accent-h)
+  );
   --color-primary-50: #000000;
-  --color-neutral-0: #000000; --color-neutral-50: #000000; --color-neutral-100: #0d0d0d;
-  --color-neutral-200: #ffffff; --color-neutral-300: #ffffff; --color-neutral-400: #d6d6d6;
-  --color-neutral-500: #d6d6d6; --color-neutral-900: #ffffff; --color-neutral-1000: #ffffff;
+  --color-neutral-0: #000000;
+  --color-neutral-50: #000000;
+  --color-neutral-100: #0d0d0d;
+  --color-neutral-200: #ffffff;
+  --color-neutral-300: #ffffff;
+  --color-neutral-400: #d6d6d6;
+  --color-neutral-500: #d6d6d6;
+  --color-neutral-900: #ffffff;
+  --color-neutral-1000: #ffffff;
   --accent-contrast: #000000;
   --shadow: none;
   --grid-dot: rgb(255 255 255 / 0.25);
@@ -206,6 +272,14 @@
   font-size: var(--step--1);
   font-weight: 500;
 }
-ch-button::part(button-control) { text-decoration: none; }
-ch-badge { font-family: var(--font-mono); font-size: 0.7rem; }
-ch-breadcrumb { font-family: var(--font-mono); font-size: var(--step--1); }
+ch-button::part(button-control) {
+  text-decoration: none;
+}
+ch-badge {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+}
+ch-breadcrumb {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+}
