@@ -1,10 +1,10 @@
 /* Apply saved theme tokens before first paint. Keep in sync with tokens.ts. */
 (function () {
   var KEY = 'kham.tokens';
-  var theme = 'dark';
-  var hue = 255;
-  var saturation = 69;
-  var radius = 4;
+  var theme = 'light';
+  var hue = 39;
+  var saturation = 120;
+  var radius = 12;
   try {
     var raw = localStorage.getItem(KEY);
     if (raw) {

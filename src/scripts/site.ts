@@ -1,9 +1,8 @@
 /* kham.udom portfolio, runs on @charm-ux/core, the open-source design system I contribute to */
-import '../charm';
+import "../charm";
 
-import { initTokenPanel } from '../lib/tokens';
-import { initReveal, initVideoFacades } from '../lib/effects';
+import { initTokenPanel } from "../lib/tokens";
+import { initVideoFacades } from "../lib/effects";
 
 initTokenPanel();
-initReveal();
 initVideoFacades();

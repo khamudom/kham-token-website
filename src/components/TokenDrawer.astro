@@ -1,26 +1,25 @@
 <!-- The live theme editor: a ch-dialog drawer driving Charm's token layer -->
-<!-- TOKEN PANEL: a Charm dialog drawer driving Charm's own tokens -->
 <ch-dialog id="token-pane" heading="design.tokens" position="end" close-button-label="Close token panel">
   <div class="pane-body">
-    <p class="intro">This is the site's live theme editor. Each control below is a <b>design token</b>: a named style decision, like the accent color or corner radius, that every part of this page derives from. Change one and watch the whole system follow.</p>
-    <ch-radio-group label="color.scheme" name="theme" id="theme-group" layout="horizontal">
-      <ch-radio value="light" label="light"></ch-radio>
-      <ch-radio value="dark" label="dark"></ch-radio>
+    <p class="intro">Buttons, seals, links, and the exploded button anatomy in the hero share one <b>accent ink</b> token. Adjust hue, saturation, radius, or edition and every Charm component — plus each diagram layer — re-themes live. Hover the diagram to expand it.</p>
+    <ch-radio-group label="edition" name="theme" id="theme-group" layout="horizontal">
+      <ch-radio value="light" label="day"></ch-radio>
+      <ch-radio value="dark" label="night"></ch-radio>
       <ch-radio value="contrast" label="hi-con"></ch-radio>
     </ch-radio-group>
     <div>
-      <label class="rng" for="hue">accent.hue <output id="hue-out">255</output></label>
-      <input type="range" id="hue" min="0" max="360" value="255" step="1" />
+      <label class="rng" for="hue">ink.hue <output id="hue-out">39</output></label>
+      <input type="range" id="hue" min="0" max="360" value="39" step="1" />
     </div>
     <div>
-      <label class="rng" for="saturation">accent.saturation <output id="saturation-out">69%</output></label>
-      <input type="range" id="saturation" min="0" max="200" value="69" step="1" />
+      <label class="rng" for="saturation">ink.saturation <output id="saturation-out">120%</output></label>
+      <input type="range" id="saturation" min="0" max="200" value="120" step="1" />
     </div>
     <div>
-      <label class="rng" for="radius">shape.radius <output id="radius-out">4px</output></label>
-      <input type="range" id="radius" min="0" max="26" value="4" step="1" />
+      <label class="rng" for="radius">shape.radius <output id="radius-out">12px</output></label>
+      <input type="range" id="radius" min="0" max="26" value="12" step="1" />
     </div>
     <ch-button class="kh-btn-ghost kh-btn-compact" id="tokens-reset">Reset to defaults</ch-button>
-    <p class="note">This drawer is a <b>ch-dialog</b>, the radios are <b>ch-radio</b>, and every button, card, and badge on this page is a Charm component. The sliders mutate Charm's token layer directly, and the system re-themes itself live. Under the hood, each token is a CSS custom property on <b>:root</b>, and your changes are saved in this browser. Go ahead, break it.</p>
+    <p class="note">This drawer is a <b>ch-dialog</b>, the radios are <b>ch-radio</b>, and every button, card, and badge on this page is a Charm component. The sliders mutate Charm's token layer on <b>:root</b>. Your changes are saved in this browser.</p>
   </div>
 </ch-dialog>
