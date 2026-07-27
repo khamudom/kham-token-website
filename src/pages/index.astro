@@ -1,319 +1,579 @@
 ---
-import Base from '../layouts/Base.astro';
-import SiteFooter from '../components/SiteFooter.astro';
+import Base from "../layouts/Base.astro";
+import SiteFooter from "../components/SiteFooter.astro";
 ---
+
 <Base
-  title="Kham Udom — UX Engineer · Design Systems"
-  description="UX engineer specializing in design systems, component libraries, and accessible frontend architecture. This site is built on Charm UX, an open-source design system he contributes to."
+  title="Kham Udom — UX Engineer · Systems · Products · Prototypes"
+  description="UX engineer who builds design systems, ships products from design to production, and prototypes ideas into working software. This site runs on Charm UX, an open-source design system he contributes to."
 >
   <main id="main">
-
-  <!-- 01 · key visual: claim + hover-expand anatomy -->
-  <section class="horizon" id="top" aria-label="Introduction">
-    <div class="wrap horizon-inner">
-      <div class="horizon-type">
-        <p class="cap claim-kicker">Kham Udom — UX engineer · design systems</p>
-        <h1 class="claim">I build <em>the components</em> other teams build with.</h1>
-        <p class="claim-serif">Design systems · Seattle</p>
-        <p class="lede">Design systems, component libraries, and accessible frontend architecture — for game consoles, browsers, and AI developer platforms. I also ship full products end to end, from schema to UI.</p>
-        <div class="cta-row">
-          <ch-button class="kh-btn-primary" href="#work">View the work</ch-button>
-          <ch-button class="kh-btn-ghost" href="mailto:khamu@outlook.com">Get in touch</ch-button>
-        </div>
-        <p class="hero-meta">
-          <span>design systems · component architecture · WCAG · ARIA advocate</span>
-          <span class="charm-note">this site runs on Charm UX, a design system I help build ↓</span>
-        </p>
-      </div>
-      <div
-        class="stage"
-        tabindex="0"
-        aria-label="Exploded diagram of a button component, showing its anatomy layer by layer: elevation shadow, surface, hover state, label, and focus ring. Hover or focus to expand."
-      >
-        <div class="stack" aria-hidden="true">
-          <div class="layer l-shadow"><span class="tag">--button-shadow</span></div>
-          <div class="layer l-surface"><span class="tag">--button-bg-color</span></div>
-          <div class="layer l-state"><span class="tag">--button-hover-bg-color</span></div>
-          <div class="layer l-label">Get started<span class="tag">--button-fg-color</span></div>
-          <div class="layer l-focus"><span class="tag">--button-focus-shadow</span></div>
-        </div>
-        <p class="stage-caption">fig 1 — anatomy of a button. every layer is a decision.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 02 · work: featured editorial + proof strip + index (not a card grid) -->
-  <section class="band" id="work">
-    <div class="wrap">
-      <header class="band-head">
-        <p class="folio"><span>kham.work</span><span class="folio-run">Selected work</span></p>
-        <h2 class="band-title">Systems that outlive the sprint they shipped in.</h2>
-      </header>
-
-      <article class="feature-band">
-        <div class="feature-band-copy">
-          <p class="org"><span>Microsoft CoreAI</span><span>2025 — present</span></p>
-          <h3>AI Foundry Design System &amp; Foundry Toolkit</h3>
-          <p class="lede-sm">On the CoreAI team I build React + TypeScript components for Microsoft's AI Foundry design system and handle WCAG and ARIA fixes across the platform. I also work with the Foundry Toolkit extension team on <strong>vsc-ui-react</strong>: an open-source library of VS Code-styled Fluent UI v9 components that ships inside an extension with 1.2M+ installs.</p>
-          <div class="card-links">
-            <a href="https://ai.azure.com/home" target="_blank" rel="noopener">Microsoft Foundry ↗</a>
-            <a href="https://github.com/vuxhub/vsc-ui-react" target="_blank" rel="noopener">GitHub ↗</a>
-            <a href="https://www.npmjs.com/package/vsc-ui-react" target="_blank" rel="noopener">npm ↗</a>
-            <a href="https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio" target="_blank" rel="noopener">Foundry Toolkit ↗</a>
+    <!-- 01 · key visual: claim + hover-expand anatomy -->
+    <section class="horizon" id="top" aria-label="Introduction">
+      <div class="wrap horizon-inner">
+        <div class="horizon-type">
+          <p class="cap claim-kicker">
+            UX engineer · systems · products · prototypes
+          </p>
+          <h1 class="claim">
+            I build <em>the components</em> other teams build with.
+          </h1>
+          <p class="claim-serif">Prototype → product → production systems</p>
+          <p class="lede">
+            I make ideas tangible fast, ship full products from schema to UI,
+            and build the design systems teams scale on — for game consoles,
+            browsers, and AI developer platforms.
+          </p>
+          <div class="cta-row">
+            <ch-button class="kh-btn-primary" href="#work"
+              >View the work</ch-button
+            >
+            <ch-button class="kh-btn-ghost" href="mailto:khamu@outlook.com"
+              >Get in touch</ch-button
+            >
           </div>
+          <p class="hero-meta">
+            <span
+              >design systems · end-to-end products · interactive prototypes</span
+            >
+            <span class="charm-note"
+              >this site runs on Charm UX, a design system I help build ↓</span
+            >
+          </p>
         </div>
-        <div class="feature-band-media">
-          <span class="ship-mark">currently shipping</span>
-          <div class="card-cover" role="img" aria-label="Code figure showing a vsc-ui-react snippet with rendered button and input components">
-            <div class="vsc-bar">Button.stories.tsx — vsc-ui-react</div>
-            <div class="vsc-code"><span class="c1">import</span> &#123; VscButton &#125; <span class="c1">from</span> <span class="c2">'vsc-ui-react'</span>;
-
-<span class="c3">// VS Code themed, Fluent under the hood</span>
-&lt;VscButton appearance=<span class="c2">"primary"</span>&gt;
-  Save
-&lt;/VscButton&gt;</div>
-            <div class="vsc-ui" aria-hidden="true">
-              <span class="vsc-btn">Save</span>
-              <span class="vsc-btn sec">Cancel</span>
-              <span class="vsc-input">Search…</span>
+        <div
+          class="stage"
+          tabindex="0"
+          aria-label="Exploded diagram of a button component, showing its anatomy layer by layer: elevation shadow, surface, hover state, label, and focus ring. Hover or focus to expand."
+        >
+          <div class="stack" aria-hidden="true">
+            <div class="layer l-shadow">
+              <span class="tag">--button-shadow</span>
+            </div>
+            <div class="layer l-surface">
+              <span class="tag">--button-bg-color</span>
+            </div>
+            <div class="layer l-state">
+              <span class="tag">--button-hover-bg-color</span>
+            </div>
+            <div class="layer l-label">
+              Get started<span class="tag">--button-fg-color</span>
+            </div>
+            <div class="layer l-focus">
+              <span class="tag">--button-focus-shadow</span>
             </div>
           </div>
+          <p class="stage-caption">
+            fig 1 — anatomy of a button. every layer is a decision.
+          </p>
         </div>
-      </article>
+      </div>
+    </section>
 
-      <article class="proof-strip">
-        <div class="proof-media">
-          <div class="card-cover charm" role="img" aria-label="Code figure showing a charm-button web component snippet with design token swatches">
-            <div class="vsc-bar">button.stories.mdx — @charm-ux/core</div>
-            <div class="vsc-code"><span class="c1">import</span> <span class="c2">'@charm-ux/core/components/button/button.js'</span>;
+    <!-- 02 · work: featured editorial + proof strip + index (not a card grid) -->
+    <section class="band" id="work">
+      <div class="wrap">
+        <header class="band-head">
+          <p class="folio">
+            <span>kham.work</span><span class="folio-run">Selected work</span>
+          </p>
+          <h2 class="band-title">
+            Systems, products, and the prototypes that got them there.
+          </h2>
+        </header>
 
-<span class="c3">// headless, themable, framework-agnostic</span>
-&lt;charm-button variant=<span class="c2">"primary"</span>&gt;
-  Click me
-&lt;/charm-button&gt;</div>
-            <div class="charm-swatches" aria-hidden="true">
-              <i style="background: var(--color-primary-300)"></i><i style="background: var(--color-primary-500)"></i><i style="background: var(--color-primary-700)"></i><i style="background: var(--surface-2)"></i><i style="background: var(--ink)"></i>
-              <span class="lbl2">generateTheme(tokens)</span>
-            </div>
-          </div>
-        </div>
-        <div class="proof-copy">
-          <p class="org"><span>open source</span><span>2023 — present</span></p>
-          <h3>Charm UX</h3>
-          <p class="lede-sm">An open-source design system that began as an internal Microsoft library and is now public: 30+ accessible, headless Lit web components, themed through a dedicated token package. I contribute to building its core. <strong>You're looking at it — this portfolio is built on Charm.</strong></p>
-          <div class="card-links">
-            <a href="https://charm-ux.github.io/core/" target="_blank" rel="noopener">Charm site ↗</a>
-            <a href="https://github.com/charm-ux/core" target="_blank" rel="noopener">GitHub ↗</a>
-            <a href="https://www.npmjs.com/package/@charm-ux/core" target="_blank" rel="noopener">npm ↗</a>
-          </div>
-        </div>
-      </article>
-
-      <ul class="work-index">
-        <li class="work-row">
-          <img class="work-thumb" src="/images/athletic.jpg" alt="" loading="lazy" />
-          <div class="work-row-body">
-            <p class="org"><span>independent</span><span>2026</span></p>
-            <h3>The Athletic Advertising</h3>
-            <p>Production marketing front for ad formats, specs, and proof — Astro SSG, Content Collections, sparse GSAP.</p>
+        <article class="feature-band">
+          <div class="feature-band-copy">
+            <p class="org">
+              <span>Microsoft CoreAI · systems</span><span>2025 — present</span>
+            </p>
+            <h3>AI Foundry Design System &amp; Foundry Toolkit</h3>
+            <p class="lede-sm">
+              On the CoreAI team I build React + TypeScript components for
+              Microsoft's AI Foundry design system and handle WCAG and ARIA
+              fixes across the platform. I also work with the Foundry Toolkit
+              extension team on <strong>vsc-ui-react</strong>: an open-source
+              library of VS Code-styled Fluent UI v9 components that ships
+              inside an extension with 1.2M+ installs.
+            </p>
             <div class="card-links">
-              <a href="https://theathleticadvertising.com/" target="_blank" rel="noopener">Live site ↗</a>
+              <a href="https://ai.azure.com/home" target="_blank" rel="noopener"
+                >Microsoft Foundry ↗</a
+              >
+              <a
+                href="https://github.com/vuxhub/vsc-ui-react"
+                target="_blank"
+                rel="noopener">GitHub ↗</a
+              >
+              <a
+                href="https://www.npmjs.com/package/vsc-ui-react"
+                target="_blank"
+                rel="noopener">npm ↗</a
+              >
+              <a
+                href="https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio"
+                target="_blank"
+                rel="noopener">Foundry Toolkit ↗</a
+              >
             </div>
           </div>
-        </li>
-        <li class="work-row">
-          <img class="work-thumb" src="/images/recipe-room.jpg" alt="" loading="lazy" />
-          <div class="work-row-body">
-            <p class="org"><span>independent</span><span>2025 — present</span></p>
+          <div class="feature-band-media">
+            <span class="ship-mark">currently shipping</span>
+            <div
+              class="card-cover"
+              role="img"
+              aria-label="Code figure showing a vsc-ui-react snippet with rendered button and input components"
+            >
+              <div class="vsc-bar">Button.stories.tsx — vsc-ui-react</div>
+              <div class="vsc-code">
+                <span class="c1">import</span> &#123; VscButton &#125; <span
+                  class="c1">from</span
+                >
+                <span class="c2">'vsc-ui-react'</span>;
+
+                <span class="c3">// VS Code themed, Fluent under the hood</span>
+                &lt;VscButton appearance=<span class="c2">"primary"</span>&gt;
+                Save &lt;/VscButton&gt;
+              </div>
+              <div class="vsc-ui" aria-hidden="true">
+                <span class="vsc-btn">Save</span>
+                <span class="vsc-btn sec">Cancel</span>
+                <span class="vsc-input">Search…</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="proof-strip">
+          <div class="proof-media">
+            <div
+              class="card-cover charm"
+              role="img"
+              aria-label="Code figure showing a charm-button web component snippet with design token swatches"
+            >
+              <div class="vsc-bar">button.stories.mdx — @charm-ux/core</div>
+              <div class="vsc-code">
+                <span class="c1">import</span>
+                <span class="c2"
+                  >'@charm-ux/core/components/button/button.js'</span
+                >;
+
+                <span class="c3">// headless, themable, framework-agnostic</span
+                >
+                &lt;charm-button variant=<span class="c2">"primary"</span>&gt;
+                Click me &lt;/charm-button&gt;
+              </div>
+              <div class="charm-swatches" aria-hidden="true">
+                <i style="background: var(--color-primary-300)"></i><i
+                  style="background: var(--color-primary-500)"></i><i
+                  style="background: var(--color-primary-700)"></i><i
+                  style="background: var(--surface-2)"></i><i
+                  style="background: var(--ink)"></i>
+                <span class="lbl2">generateTheme(tokens)</span>
+              </div>
+            </div>
+          </div>
+          <div class="proof-copy">
+            <p class="org">
+              <span>open source · systems</span><span>2023 — present</span>
+            </p>
+            <h3>Charm UX</h3>
+            <p class="lede-sm">
+              An open-source design system that began as an internal Microsoft
+              library and is now public: 30+ accessible, headless Lit web
+              components, themed through a dedicated token package. I contribute
+              to building its core. <strong
+                >You're looking at it — this portfolio is built on Charm.</strong
+              >
+            </p>
+            <div class="card-links">
+              <a
+                href="https://charm-ux.github.io/core/"
+                target="_blank"
+                rel="noopener">Charm site ↗</a
+              >
+              <a
+                href="https://github.com/charm-ux/core"
+                target="_blank"
+                rel="noopener">GitHub ↗</a
+              >
+              <a
+                href="https://www.npmjs.com/package/@charm-ux/core"
+                target="_blank"
+                rel="noopener">npm ↗</a
+              >
+            </div>
+          </div>
+        </article>
+
+        <article class="feature-band product-band">
+          <div class="feature-band-media">
+            <span class="ship-mark">design → production</span>
+            <img
+              class="product-cover"
+              src="/images/recipe-room.jpg"
+              alt="The Recipe Room cookbook interface with recipe cards and detail view"
+              loading="lazy"
+            />
+          </div>
+          <div class="feature-band-copy">
+            <p class="org">
+              <span>independent · product</span><span>2025 — present</span>
+            </p>
             <h3>The Recipe Room</h3>
-            <p>Full-stack recipe PWA: Postgres schema to cookbook UI, GPT-4o vision extract, chef assistant.</p>
+            <p class="lede-sm">
+              A full product from first schema to live PWA: Postgres data model,
+              GPT-4o vision recipe extract, chef assistant, and the cookbook UI
+              cooks use. Proof that I don't stop at the component layer — I ship
+              the app.
+            </p>
             <div class="card-links">
-              <a href="/work/the-recipe-room" class="case-link">Read the case study →</a>
-              <a href="https://www.thereciperoom.net/" target="_blank" rel="noopener">Live site ↗</a>
-              <a href="https://github.com/khamudom/the-recipe-room" target="_blank" rel="noopener">GitHub ↗</a>
+              <a href="/work/the-recipe-room" class="case-link"
+                >Read the case study →</a
+              >
+              <a
+                href="https://www.thereciperoom.net/"
+                target="_blank"
+                rel="noopener">Live site ↗</a
+              >
+              <a
+                href="https://github.com/khamudom/the-recipe-room"
+                target="_blank"
+                rel="noopener">GitHub ↗</a
+              >
             </div>
           </div>
-        </li>
-        <li class="work-row">
-          <img class="work-thumb" src="/images/edge.jpg" alt="" loading="lazy" />
-          <div class="work-row-body">
-            <p class="org"><span>Microsoft Web Platform</span><span>2017 — 2021</span></p>
-            <h3>Microsoft Edge</h3>
-            <p>FAST / Fluent components for Shopping, News, Vertical Tabs prototypes, and high-contrast DevTools.</p>
-            <div class="card-links">
-              <a href="/work/microsoft-edge" class="case-link">Read the case study →</a>
+        </article>
+
+        <ul class="work-index">
+          <li class="work-row">
+            <img
+              class="work-thumb"
+              src="/images/athletic.jpg"
+              alt=""
+              loading="lazy"
+            />
+            <div class="work-row-body">
+              <p class="org">
+                <span>independent · product</span><span>2026</span>
+              </p>
+              <h3>The Athletic Advertising</h3>
+              <p>
+                Production marketing site from design through deploy — ad
+                formats, specs, and proof pages on Astro SSG and Content
+                Collections.
+              </p>
+              <div class="card-links">
+                <a
+                  href="https://theathleticadvertising.com/"
+                  target="_blank"
+                  rel="noopener">Live site ↗</a
+                >
+              </div>
             </div>
-          </div>
-        </li>
-        <li class="work-row">
-          <img class="work-thumb" src="/images/fast.jpg" alt="" loading="lazy" />
-          <div class="work-row-body">
-            <p class="org"><span>Microsoft Web Platform</span><span>2017 — 2021</span></p>
-            <h3>FAST &amp; Fluent UI Web Components</h3>
-            <p>Open-source contributor: high-contrast work, navigation and section-header for fast.design.</p>
-            <div class="card-links">
-              <a href="/work/fast" class="case-link">Read the case study →</a>
-              <a href="https://fast.design/" target="_blank" rel="noopener">fast.design ↗</a>
-              <a href="https://github.com/microsoft/fast" target="_blank" rel="noopener">GitHub ↗</a>
+          </li>
+          <li class="work-row">
+            <img
+              class="work-thumb"
+              src="/images/edge.jpg"
+              alt=""
+              loading="lazy"
+            />
+            <div class="work-row-body">
+              <p class="org">
+                <span>Microsoft Web Platform · prototype</span><span
+                  >2017 — 2021</span
+                >
+              </p>
+              <h3>Microsoft Edge</h3>
+              <p>
+                Live prototypes for Vertical Tabs and feature flows, plus FAST /
+                Fluent components for Shopping, News, and high-contrast
+                DevTools.
+              </p>
+              <div class="card-links">
+                <a href="/work/microsoft-edge" class="case-link"
+                  >Read the case study →</a
+                >
+              </div>
             </div>
-          </div>
-        </li>
-        <li class="work-row">
-          <img class="work-thumb" src="/images/xbox.jpg" alt="" loading="lazy" />
-          <div class="work-row-body">
-            <p class="org"><span>Microsoft Xbox</span><span>2012 — 2017</span></p>
-            <h3>Xbox One Dashboard</h3>
-            <p>Core UI across Home, Community, Store, and One Guide — XAML/MVVM, 10-foot TV experience.</p>
-            <div class="card-links">
-              <a href="/work/xbox-dashboard" class="case-link">Read the case study →</a>
+          </li>
+          <li class="work-row">
+            <img
+              class="work-thumb"
+              src="/images/fast.jpg"
+              alt=""
+              loading="lazy"
+            />
+            <div class="work-row-body">
+              <p class="org">
+                <span>Microsoft Web Platform · systems</span><span
+                  >2017 — 2021</span
+                >
+              </p>
+              <h3>FAST &amp; Fluent UI Web Components</h3>
+              <p>
+                Open-source contributor: high-contrast work, navigation and
+                section-header for fast.design.
+              </p>
+              <div class="card-links">
+                <a href="/work/fast" class="case-link">Read the case study →</a>
+                <a href="https://fast.design/" target="_blank" rel="noopener"
+                  >fast.design ↗</a
+                >
+                <a
+                  href="https://github.com/microsoft/fast"
+                  target="_blank"
+                  rel="noopener">GitHub ↗</a
+                >
+              </div>
             </div>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </section>
+          </li>
+          <li class="work-row">
+            <img
+              class="work-thumb"
+              src="/images/xbox.jpg"
+              alt=""
+              loading="lazy"
+            />
+            <div class="work-row-body">
+              <p class="org">
+                <span>Microsoft Xbox · product</span><span>2012 — 2017</span>
+              </p>
+              <h3>Xbox One Dashboard</h3>
+              <p>
+                Core UI and prototypes across Home, Community, Store, and One
+                Guide — XAML/MVVM, 10-foot TV experience through three console
+                releases.
+              </p>
+              <div class="card-links">
+                <a href="/work/xbox-dashboard" class="case-link"
+                  >Read the case study →</a
+                >
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
 
-  <!-- 03 · approach: manifesto stack, not three equal cards -->
-  <section class="band band-deep" id="approach">
-    <div class="wrap manifesto-wrap">
-      <header class="band-head manifesto-head">
-        <p class="folio"><span>kham.approach</span><span class="folio-run">Principles</span></p>
-        <h2 class="band-title">Components are products. Developers are their users.</h2>
-      </header>
-      <ol class="manifesto">
-        <li>
-          <span class="manifesto-num" aria-hidden="true">01</span>
-          <div>
-            <h3>Accessibility is architecture</h3>
-            <p>Keyboard navigation, screen reader support, and high contrast from the start — bolting them on later never works. I've done the WCAG and ARIA cleanup from Edge to AI Foundry.</p>
-          </div>
-        </li>
-        <li>
-          <span class="manifesto-num" aria-hidden="true">02</span>
-          <div>
-            <h3>Build components developers want to use</h3>
-            <p>In a design system, other developers are the users. Clear API, predictable behavior, real examples — get that right and teams adopt; get it wrong and they build workarounds.</p>
-          </div>
-        </li>
-        <li>
-          <span class="manifesto-num" aria-hidden="true">03</span>
-          <div>
-            <h3>Live builds beat static designs</h3>
-            <p>Nine years building 3D game worlds taught me to make things you can walk through. I'd rather code a rough live version and try it than review a static mock.</p>
-          </div>
-        </li>
-      </ol>
-    </div>
-  </section>
+    <!-- 03 · approach: manifesto stack, not three equal cards -->
+    <section class="band band-deep" id="approach">
+      <div class="wrap manifesto-wrap">
+        <header class="band-head manifesto-head">
+          <p class="folio">
+            <span>kham.approach</span><span class="folio-run">Principles</span>
+          </p>
+          <h2 class="band-title">
+            Prototype it. Ship it. Then make it a system.
+          </h2>
+        </header>
+        <ol class="manifesto">
+          <li>
+            <span class="manifesto-num" aria-hidden="true">01</span>
+            <div>
+              <h3>Live builds beat static designs</h3>
+              <p>
+                Nine years building 3D game worlds taught me to make things you
+                can walk through. I'd rather code a rough live version and try
+                it than review a static mock — then harden what works into
+                production.
+              </p>
+            </div>
+          </li>
+          <li>
+            <span class="manifesto-num" aria-hidden="true">02</span>
+            <div>
+              <h3>Ship the product, not just the pieces</h3>
+              <p>
+                Schema, API, UI, deploy. I've taken products from first sketch
+                to a live URL — The Recipe Room, Athletic Advertising — and
+                built the platform UI at Microsoft that millions of people use.
+              </p>
+            </div>
+          </li>
+          <li>
+            <span class="manifesto-num" aria-hidden="true">03</span>
+            <div>
+              <h3>Accessibility is architecture</h3>
+              <p>
+                Keyboard navigation, screen reader support, and high contrast
+                from the start — bolting them on later never works. I've done
+                the WCAG and ARIA cleanup from Edge to AI Foundry.
+              </p>
+            </div>
+          </li>
+          <li>
+            <span class="manifesto-num" aria-hidden="true">04</span>
+            <div>
+              <h3>Build components developers want to use</h3>
+              <p>
+                In a design system, other developers are the users. Clear API,
+                predictable behavior, real examples — get that right and teams
+                adopt; get it wrong and they build workarounds.
+              </p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
 
-  <!-- 04 · experience: compact timeline -->
-  <section class="band" id="experience">
-    <div class="wrap">
-      <header class="band-head">
-        <p class="folio"><span>kham.experience</span><span class="folio-run">The long arc</span></p>
-        <h2 class="band-title">From game worlds to design systems.</h2>
-      </header>
-      <ol class="timeline">
-        <li>
-          <span class="yr">2025 —</span>
-          <div>
-            <span class="role">UX Engineer · Microsoft CoreAI</span>
-            <div class="org2">AI Foundry design system · contract</div>
-            <p class="desc">React + TypeScript components for AI-powered developer experiences; platform-wide accessibility improvements.</p>
-          </div>
-        </li>
-        <li>
-          <span class="yr">2023</span>
-          <div>
-            <span class="role">Software Engineer · Microsoft C+E CX Studio</span>
-            <div class="org2">Charm UX design system · contract</div>
-            <p class="desc">Core components for Charm UX — accessible, headless Lit Web Components with design-token theming.</p>
-          </div>
-        </li>
-        <li>
-          <span class="yr">2022</span>
-          <div>
-            <span class="role">Independent Software Engineer</span>
-            <div class="org2">Client products, concept → deployment</div>
-            <p class="desc">Accessible, performant web applications built in direct partnership with clients.</p>
-          </div>
-        </li>
-        <li>
-          <span class="yr">2021</span>
-          <div>
-            <span class="role">UX Engineer · Microsoft Web Prototyping</span>
-            <div class="org2">Concept validation</div>
-            <p class="desc">Interactive prototypes that de-risked product decisions and aligned stakeholders early.</p>
-          </div>
-        </li>
-        <li>
-          <span class="yr">2017</span>
-          <div>
-            <span class="role">UX Engineer · Microsoft Web Platform</span>
-            <div class="org2">FAST · Fluent UI · Edge</div>
-            <p class="desc">Core components for Edge, News, and Shopping; accessibility and UI performance initiatives.</p>
-          </div>
-        </li>
-        <li>
-          <span class="yr">2012</span>
-          <div>
-            <span class="role">Design Developer · Microsoft Xbox</span>
-            <div class="org2">Xbox Dashboard</div>
-            <p class="desc">Core UI and prototypes for the Xbox One Dashboard across the 2013 launch and the 2015 and 2017 releases.</p>
-          </div>
-        </li>
-        <li>
-          <span class="yr">2002</span>
-          <div>
-            <span class="role">3D Environment Artist · Amaze Entertainment</span>
-            <div class="org2">Cross-platform games</div>
-            <p class="desc">Nine years building detailed 3D worlds and interactive assets. That craft still shapes how I build interfaces.</p>
-          </div>
-        </li>
-      </ol>
-    </div>
-  </section>
+    <!-- 04 · experience: compact timeline -->
+    <section class="band" id="experience">
+      <div class="wrap">
+        <header class="band-head">
+          <p class="folio">
+            <span>kham.experience</span><span class="folio-run"
+              >The long arc</span
+            >
+          </p>
+          <h2 class="band-title">From game worlds to products and systems.</h2>
+        </header>
+        <ol class="timeline">
+          <li>
+            <span class="yr">2025 —</span>
+            <div>
+              <span class="role">UX Engineer · Microsoft CoreAI</span>
+              <div class="org2">AI Foundry design system · contract</div>
+              <p class="desc">
+                React + TypeScript components for AI-powered developer
+                experiences; platform-wide accessibility improvements.
+              </p>
+            </div>
+          </li>
+          <li>
+            <span class="yr">2023</span>
+            <div>
+              <span class="role"
+                >Software Engineer · Microsoft C+E CX Studio</span
+              >
+              <div class="org2">Charm UX design system · contract</div>
+              <p class="desc">
+                Core components for Charm UX — accessible, headless Lit Web
+                Components with design-token theming.
+              </p>
+            </div>
+          </li>
+          <li>
+            <span class="yr">2022</span>
+            <div>
+              <span class="role">Independent Software Engineer</span>
+              <div class="org2">Client products, concept → deployment</div>
+              <p class="desc">
+                Accessible, performant web applications built in direct
+                partnership with clients.
+              </p>
+            </div>
+          </li>
+          <li>
+            <span class="yr">2021</span>
+            <div>
+              <span class="role">UX Engineer · Microsoft Web Prototyping</span>
+              <div class="org2">Concept → working software</div>
+              <p class="desc">
+                Interactive prototypes that de-risked product decisions — live
+                builds over static mocks to align stakeholders early.
+              </p>
+            </div>
+          </li>
+          <li>
+            <span class="yr">2017</span>
+            <div>
+              <span class="role">UX Engineer · Microsoft Web Platform</span>
+              <div class="org2">FAST · Fluent UI · Edge</div>
+              <p class="desc">
+                Core components for Edge, News, and Shopping; accessibility and
+                UI performance initiatives.
+              </p>
+            </div>
+          </li>
+          <li>
+            <span class="yr">2012</span>
+            <div>
+              <span class="role">Design Developer · Microsoft Xbox</span>
+              <div class="org2">Xbox Dashboard</div>
+              <p class="desc">
+                Core UI and prototypes for the Xbox One Dashboard across the
+                2013 launch and the 2015 and 2017 releases.
+              </p>
+            </div>
+          </li>
+          <li>
+            <span class="yr">2002</span>
+            <div>
+              <span class="role"
+                >3D Environment Artist · Amaze Entertainment</span
+              >
+              <div class="org2">Cross-platform games</div>
+              <p class="desc">
+                Nine years building detailed 3D worlds and interactive assets.
+                That craft still shapes how I build interfaces.
+              </p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
 
-  <!-- 05 · skills: two-column catalog, not badge soup alone -->
-  <section class="band band-deep" id="skills">
-    <div class="wrap">
-      <header class="band-head">
-        <p class="folio"><span>kham.skills</span><span class="folio-run">Capabilities</span></p>
-        <h2 class="band-title band-title-sm">What I bring to a system.</h2>
-      </header>
-      <dl class="catalog">
-        <div class="catalog-row">
-          <dt>languages</dt>
-          <dd>TypeScript · JavaScript · HTML · CSS</dd>
-        </div>
-        <div class="catalog-row">
-          <dt>frameworks</dt>
-          <dd>React · Next.js · Lit · FAST · Astro · Web Components</dd>
-        </div>
-        <div class="catalog-row">
-          <dt>systems</dt>
-          <dd>Design systems · Design tokens · Fluent UI · Material UI · Storybook · Component architecture</dd>
-        </div>
-        <div class="catalog-row">
-          <dt>accessibility</dt>
-          <dd>WCAG · WAI-ARIA · High contrast · Performance optimization</dd>
-        </div>
-        <div class="catalog-row">
-          <dt>ai development</dt>
-          <dd>Cursor · GitHub Copilot · LLM integrations · Prompt engineering</dd>
-        </div>
-        <div class="catalog-row">
-          <dt>platforms</dt>
-          <dd>Azure DevOps · Google Cloud · Supabase · Vercel · Netlify</dd>
-        </div>
-        <div class="catalog-row">
-          <dt>interactive</dt>
-          <dd>Three.js · GSAP · Interactive prototyping</dd>
-        </div>
-      </dl>
-    </div>
-  </section>
-
+    <!-- 05 · skills: two-column catalog, not badge soup alone -->
+    <section class="band band-deep" id="skills">
+      <div class="wrap">
+        <header class="band-head">
+          <p class="folio">
+            <span>kham.skills</span><span class="folio-run">Capabilities</span>
+          </p>
+          <h2 class="band-title band-title-sm">What I bring to a team.</h2>
+        </header>
+        <dl class="catalog">
+          <div class="catalog-row">
+            <dt>languages</dt>
+            <dd>TypeScript · JavaScript · HTML · CSS</dd>
+          </div>
+          <div class="catalog-row">
+            <dt>frameworks</dt>
+            <dd>React · Next.js · Lit · FAST · Astro · Web Components</dd>
+          </div>
+          <div class="catalog-row">
+            <dt>product</dt>
+            <dd>
+              End-to-end delivery · Schema → UI · PWAs · Content Collections ·
+              Production deploys
+            </dd>
+          </div>
+          <div class="catalog-row">
+            <dt>systems</dt>
+            <dd>
+              Design systems · Design tokens · Fluent UI · Material UI ·
+              Storybook · Component architecture
+            </dd>
+          </div>
+          <div class="catalog-row">
+            <dt>prototyping</dt>
+            <dd>
+              Interactive prototypes · Live builds · Three.js · GSAP · Concept
+              validation
+            </dd>
+          </div>
+          <div class="catalog-row">
+            <dt>accessibility</dt>
+            <dd>WCAG · WAI-ARIA · High contrast · Performance optimization</dd>
+          </div>
+          <div class="catalog-row">
+            <dt>ai development</dt>
+            <dd>
+              Cursor · GitHub Copilot · LLM integrations · Prompt engineering
+            </dd>
+          </div>
+          <div class="catalog-row">
+            <dt>platforms</dt>
+            <dd>
+              Azure DevOps · Google Cloud · Supabase · Postgres · Vercel ·
+              Netlify
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </section>
   </main>
   <SiteFooter />
 </Base>

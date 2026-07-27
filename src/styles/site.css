@@ -555,6 +555,23 @@ header.site {
   border-radius: var(--border-radius-md);
 }
 
+/* product proof: photo plate (systems bands use code figures) */
+.product-band {
+  border-bottom: var(--border-w) solid var(--line);
+  margin-bottom: clamp(3rem, 6vw, 4.5rem);
+  padding-bottom: clamp(3rem, 6vw, 4.5rem);
+}
+.product-cover {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top;
+  background: var(--surface);
+  border: var(--border-w) solid var(--line);
+  border-radius: var(--border-radius-md);
+}
+
 /* charm proof: reverse split on cream paper (no accent wash) */
 .proof-strip {
   display: grid;
@@ -943,6 +960,10 @@ footer.site {
 .contact-list a:visited,
 .contact-list a:active {
   color: var(--ink);
+  text-decoration: none;
+}
+.contact-list a:hover {
+  text-decoration: underline;
 }
 .contact-list .lbl {
   color: var(--muted);
@@ -1351,21 +1372,7 @@ section:not(.band):not(.horizon) {
     justify-self: stretch;
   }
   .stage {
-    order: -1;
-    justify-self: center;
-    width: min(100%, 26rem);
-    min-height: 18rem;
-    padding-block: 2rem 0.5rem;
-  }
-  .stage .stack {
-    margin-right: 9rem;
-  }
-  .stack {
-    width: 220px;
-    height: 80px;
-  }
-  .stage-caption {
-    justify-self: center;
+    display: none;
   }
 }
 @media (max-width: 720px) {
