@@ -1,5 +1,5 @@
 /**
- * Charm UX — the component layer this site is built on.
+ * Charm UX: the component layer this site is built on.
  * Styles load from Base.astro; importing a component registers its custom element (ch-*).
  */
 import '@charm-ux/core/dist/components/button/index.js';

@@ -1,7 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 ---
-<Base title="The Recipe Room — case study · Kham Udom" description="Full-stack recipe management PWA: Next.js 15, Supabase with Row Level Security, and gpt-4o recipe extraction. A case study by Kham Udom.">
+<Base title="The Recipe Room · case study · Kham Udom" description="Full-stack recipe management PWA: Next.js 15, Supabase with Row Level Security, and gpt-4o recipe extraction. A case study by Kham Udom.">
   <main id="main">
 
 <section class="case-page" id="case-recipe-room" aria-label="Case study: The Recipe Room">
@@ -14,7 +14,7 @@ import Base from '../../layouts/Base.astro';
 
       <div class="case-head">
         <div>
-          <h1 tabindex="-1" class="case-title">The Recipe Room — recipe management system</h1>
+          <h1 tabindex="-1" class="case-title">The Recipe Room: recipe management system</h1>
           <div class="chips">
             <ch-badge>Next.js 15</ch-badge><ch-badge>TypeScript</ch-badge><ch-badge>Supabase</ch-badge><ch-badge>OpenAI</ch-badge><ch-badge>React Query</ch-badge><ch-badge>Progressive Web App</ch-badge>
           </div>
@@ -30,7 +30,7 @@ import Base from '../../layouts/Base.astro';
       </div>
 
       <div class="case-section">
-        <p class="eyebrow"><span class="tok">case</span>.architecture — the whole system</p>
+        <p class="eyebrow"><span class="tok">case</span>.architecture: the whole system</p>
         <h2>System architecture</h2>
         <p>Three trust zones: the browser, my server code, and third-party services. The client never talks to OpenAI directly and never holds a privileged database key. AI calls, image uploads, and search are brokered by API routes on the server. Recipe reads and writes go from the browser to Supabase directly with the public anon key, and Postgres Row Level Security does the authorization: write policies scope rows to the signed-in user, and a few read policies expose featured recipes publicly.</p>
         <div class="archfig">
@@ -51,7 +51,7 @@ import Base from '../../layouts/Base.astro';
 
               <!-- client -->
               <rect class="sd-box" x="30" y="60" width="230" height="220" rx="10"/>
-              <text class="sd-title" x="46" y="88">client — installable pwa</text>
+              <text class="sd-title" x="46" y="88">client: installable pwa</text>
               <text class="sd-item" x="46" y="114">Next.js 15 · App Router</text>
               <text class="sd-item" x="46" y="136">React Query · persisted cache</text>
               <text class="sd-item" x="46" y="158">Redux Toolkit · ui state</text>
@@ -107,13 +107,13 @@ import Base from '../../layouts/Base.astro';
               <line class="sd-flow" x1="902" y1="150" x2="894" y2="150" marker-end="url(#arr2)"/>
               <text class="sd-flow-lbl" x="160" y="374">supabase-js · auth + recipe CRUD · RLS-enforced</text>
             </svg>
-            <figcaption>fig 1 — secrets live server-side, and ownership is enforced by Row Level Security in the database, where a client bug cannot bypass it.</figcaption>
+            <figcaption>fig 1. secrets live server-side, and ownership is enforced by Row Level Security in the database, where a client bug cannot bypass it.</figcaption>
           </figure>
         </div>
       </div>
 
       <div class="case-section">
-        <p class="eyebrow"><span class="tok">case</span>.flow — the interesting path</p>
+        <p class="eyebrow"><span class="tok">case</span>.flow: the interesting path</p>
         <h2>Request flow: photo in, recipe out</h2>
         <p>The signature feature is turning a photo of any recipe, a cookbook page or a handwritten card, into structured data. Here's the full round trip:</p>
         <ol class="flow-steps">
@@ -126,7 +126,7 @@ import Base from '../../layouts/Base.astro';
       </div>
 
       <div class="case-section">
-        <p class="eyebrow"><span class="tok">case</span>.decisions — tradeoffs I made on purpose</p>
+        <p class="eyebrow"><span class="tok">case</span>.decisions: tradeoffs I made on purpose</p>
         <h2>Architecture decisions</h2>
         <div class="principles" style="margin-top: 1.5rem;">
           <ch-card>
@@ -148,13 +148,13 @@ import Base from '../../layouts/Base.astro';
       </div>
 
       <div class="case-section">
-        <p class="eyebrow"><span class="tok">case</span>.frontend — where the ux engineering shows</p>
+        <p class="eyebrow"><span class="tok">case</span>.frontend: where the ux engineering shows</p>
         <h2>Frontend architecture</h2>
         <p>The UI is a vintage cookbook: warm cream, classic recipe cards, and handwritten-feeling type, built on a token layer in <code>design-system/tokens</code> so the theme is data, not scattered CSS. I also put focused work into how fast it feels: skeleton loaders match the final layout so nothing shifts, Lottie animations are preloaded, images run through Next.js optimization, and routes code-split on their own. Offline, the service worker keeps the app usable in the kitchen, which is where a recipe app actually gets used, on a flour-covered phone with one hand.</p>
       </div>
 
       <div class="case-section">
-        <p class="eyebrow"><span class="tok">case</span>.transfer — what this work makes me good at</p>
+        <p class="eyebrow"><span class="tok">case</span>.transfer: what this work makes me good at</p>
         <h2>What transfers</h2>
         <p>I can take a product from database schema to shipped UI on my own. I give model output the same scrutiny as user input. Everything the AI returns is validated and reviewed before it's saved. I put the security checks in the database, where they still hold if my application code has a bug. And I pay close attention to how fast an app <em>feels</em>, which is a different problem from how fast it benchmarks.</p>
       </div>

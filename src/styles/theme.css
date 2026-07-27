@@ -1,10 +1,10 @@
 /* ================================================================
-   KHAM.UDOM — THE KEY VISUAL. A Charm UX theme override.
+   KHAM.UDOM: THE KEY VISUAL. A Charm UX theme override.
 
    THESIS: cream type column beside a live hover-expand button
-   anatomy — every layer a design-token decision; the accent token
+   anatomy: every layer a design-token decision; the accent token
    recolors UI chrome and the diagram together. No animated ground.
-   OWN-WORLD: Neo Mirai trio — cream paper / mustard gold marks /
+   OWN-WORLD: Neo Mirai trio: cream paper / mustard gold marks /
    burnt-orange action from live --accent-h; Exo 2 + Source
    Serif 4 + Azeret Mono; pill CTAs; dark anatomy stage.
    STORY: a hiring manager reads the claim, sees the component
@@ -101,7 +101,7 @@
   --accent-ink: var(--color-primary-600);
   --accent-soft: var(--color-primary-100);
   --accent-contrast: #f5f2e7;
-  /* Fixed Neo Mirai mustard — labels/marks. Vivid gold fails AA on
+  /* Fixed Neo Mirai mustard: labels/marks. Vivid gold fails AA on
      cream, so --gold-ink is the readable paper role; --gold is for
      night / dark grounds. */
   --gold: #d49a00;
@@ -205,7 +205,7 @@
   accent-color: var(--accent);
 }
 
-/* night: cool charcoal — not warm umber / brown */
+/* night: cool charcoal: not warm umber / brown */
 :root[data-theme="dark"] {
   --color-primary-500: oklch(
     0.72 calc(0.14 * var(--accent-s) / 100) var(--accent-h)
@@ -245,12 +245,11 @@
 }
 
 :root[data-theme="contrast"] {
-  --color-primary-500: oklch(
-    0.75 calc(0.18 * var(--accent-s) / 100) var(--accent-h)
-  );
-  --color-primary-600: oklch(
-    0.8 calc(0.16 * var(--accent-s) / 100) var(--accent-h)
-  );
+  /* Fixed turquoise accent: hi-con locks hue/sat/radius sliders. */
+  --color-primary-400: oklch(0.78 0.15 192);
+  --color-primary-500: oklch(0.82 0.16 192);
+  --color-primary-600: oklch(0.88 0.14 192);
+  --color-primary-700: oklch(0.72 0.15 192);
   --color-primary-50: #000000;
   --color-primary-100: #000000;
   --color-neutral-0: #000000;

@@ -174,11 +174,21 @@ export function initTokenPanel(): void {
     });
   }
 
+  function syncSliderAvailability(): void {
+    /* hi-con locks accent + radius: accent is a fixed turquoise. */
+    const locked = tokens.theme === 'contrast';
+    for (const input of [hue, saturation, radius]) {
+      input.disabled = locked;
+      input.setAttribute('aria-disabled', String(locked));
+    }
+  }
+
   function applyTheme(name: ThemeName): void {
     tokens.theme = name;
     setTheme(name);
     syncThemeRadios();
     syncSwatches();
+    syncSliderAvailability();
     updateCaptions();
     saveTokens();
   }
@@ -196,12 +206,13 @@ export function initTokenPanel(): void {
     radiusOut.textContent = `${tokens.radius}px`;
     syncThemeRadios();
     syncSwatches();
+    syncSliderAvailability();
     updateCaptions();
   }
 
   applyTokens();
 
-  /* the trigger's `shows` attribute opens the dialog — Charm's documented
+  /* the trigger's `shows` attribute opens the dialog. Charm's documented
      drawer pattern (ch-dialog position="end"). The dialog handles its own
      close; we just keep the trigger state in sync. */
   new MutationObserver(() => {
@@ -233,7 +244,7 @@ export function initTokenPanel(): void {
   );
 
   function demoteDialogShell(): void {
-    /* Charm sets tabindex=0 on <dialog> while open — that empty shell is
+    /* Charm sets tabindex=0 on <dialog> while open. that empty shell is
        what Tab was hitting. Keep it out of the cycle. */
     const dialog = pane.shadowRoot?.querySelector<HTMLElement>('dialog');
     if (dialog) dialog.tabIndex = -1;
@@ -259,7 +270,7 @@ export function initTokenPanel(): void {
     closeWithKeyboard = source === 'keyboard' || (source === 'close-button' && keyActivated);
   });
 
-  /** Focus the opener only after <dialog> leaves :modal — earlier and the
+  /** Focus the opener only after <dialog> leaves :modal. earlier and the
    *  top-layer trap eats the focus and parks it on the dialog shell. */
   let restoreQueued = false;
   function restoreTriggerWhenFree(): void {

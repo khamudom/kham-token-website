@@ -1,19 +1,19 @@
-# kham.udom — portfolio
+# kham.udom: portfolio
 
 Personal portfolio of **Kham Udom**, UX Engineer (design systems, accessibility, frontend architecture).
 
-The site is built on **[@charm-ux/core](https://github.com/charm-ux/core)** — an open-source design system of accessible, headless Lit web components that began as an internal Microsoft library and is now public. I contribute to building its core components, and this portfolio dogfoods them: every button, card, badge, breadcrumb, and the token panel is a `ch-*` component, with the entire look applied as a Charm **theme override** through design tokens alone.
+The site is built on **[@charm-ux/core](https://github.com/charm-ux/core)**: an open-source design system of accessible, headless Lit web components that began as an internal Microsoft library and is now public. I contribute to building its core components, and this portfolio dogfoods them: every button, card, badge, breadcrumb, and the token panel is a `ch-*` component, with the entire look applied as a Charm **theme override** through design tokens alone.
 
 ## Highlights
 
-- **Live token panel** — the "tokens" button opens a `ch-push-pane` with theme (light / dark / high-contrast), accent hue, and corner radius controls. These mutate Charm's token layer at runtime, so the whole page (Charm components included) re-themes live.
-- **Charm theme override** — `src/styles/theme.css` remaps Charm's primary ramp to `oklch(… var(--accent-h))`, the neutral ramp to porcelain (with dark and high-contrast variants), and shape tokens to a live `--radius` token. No component CSS is forked.
-- **Case study with hash routing** — `#/work/the-recipe-room` opens a full architecture case study (trust-zone diagram, request flow, decisions & tradeoffs).
-- **Accessibility** — skip link, visible focus everywhere, `prefers-reduced-motion` and `prefers-color-scheme` respected, keyboard-operable panel, semantic landmarks.
+- **Live token panel**: the "tokens" button opens a `ch-push-pane` with theme (light / dark / high-contrast), accent hue, and corner radius controls. These mutate Charm's token layer at runtime, so the whole page (Charm components included) re-themes live.
+- **Charm theme override**: `src/styles/theme.css` remaps Charm's primary ramp to `oklch(… var(--accent-h))`, the neutral ramp to porcelain (with dark and high-contrast variants), and shape tokens to a live `--radius` token. No component CSS is forked.
+- **Case study with hash routing**: `#/work/the-recipe-room` opens a full architecture case study (trust-zone diagram, request flow, decisions & tradeoffs).
+- **Accessibility**: skip link, visible focus everywhere, `prefers-reduced-motion` and `prefers-color-scheme` respected, keyboard-operable panel, semantic landmarks.
 
 ## Stack
 
-- [Astro](https://astro.build/) — build-time components, static HTML output, real URLs per case study
+- [Astro](https://astro.build/): build-time components, static HTML output, real URLs per case study
 - [@charm-ux/core](https://www.npmjs.com/package/@charm-ux/core) (Lit web components) as the component layer
 - TypeScript (strict) for all site behavior
 

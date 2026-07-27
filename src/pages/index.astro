@@ -4,8 +4,8 @@ import SiteFooter from "../components/SiteFooter.astro";
 ---
 
 <Base
-  title="Kham Udom — UX Engineer · Systems · Products · Prototypes"
-  description="UX engineer who builds design systems, ships products from design to production, and prototypes ideas into working software. This site runs on Charm UX, an open-source design system he contributes to."
+  title="Kham Udom · UX Engineer · Design Systems · Prototypes · Software"
+  description="UX engineer specializing in design systems, interactive prototypes, and production software. This site runs on Charm UX, an open-source design system he contributes to."
 >
   <main id="main">
     <!-- 01 · key visual: claim + hover-expand anatomy -->
@@ -13,16 +13,18 @@ import SiteFooter from "../components/SiteFooter.astro";
       <div class="wrap horizon-inner">
         <div class="horizon-type">
           <p class="cap claim-kicker">
-            UX engineer · systems · products · prototypes
+            UX engineer · design systems · prototypes · software
           </p>
           <h1 class="claim">
-            I build <em>the components</em> other teams build with.
+            I turn design into <em>software</em> that ships.
           </h1>
-          <p class="claim-serif">Prototype → product → production systems</p>
+          <p class="claim-serif">
+            Design systems · Prototypes · Production software
+          </p>
           <p class="lede">
-            I make ideas tangible fast, ship full products from schema to UI,
-            and build the design systems teams scale on — for game consoles,
-            browsers, and AI developer platforms.
+            I prototype ideas into something you can try, ship full products
+            from schema to UI, and build the design systems teams scale on for
+            game consoles, browsers, and AI developer platforms.
           </p>
           <div class="cta-row">
             <ch-button class="kh-btn-primary" href="#work"
@@ -34,7 +36,7 @@ import SiteFooter from "../components/SiteFooter.astro";
           </div>
           <p class="hero-meta">
             <span
-              >design systems · end-to-end products · interactive prototypes</span
+              >design systems · interactive prototypes · production software</span
             >
             <span class="charm-note"
               >this site runs on Charm UX, a design system I help build ↓</span
@@ -44,7 +46,7 @@ import SiteFooter from "../components/SiteFooter.astro";
         <div
           class="stage"
           tabindex="0"
-          aria-label="Exploded diagram of a button component, showing its anatomy layer by layer: elevation shadow, surface, hover state, label, and focus ring. Hover or focus to expand."
+          aria-label="Exploded diagram of a button as a design system: each layer maps to a design token (elevation shadow, surface, hover state, label, and focus ring). Hover or focus to expand. Open tokens to re-theme it live."
         >
           <div class="stack" aria-hidden="true">
             <div class="layer l-shadow">
@@ -64,7 +66,7 @@ import SiteFooter from "../components/SiteFooter.astro";
             </div>
           </div>
           <p class="stage-caption">
-            fig 1 — anatomy of a button. every layer is a decision.
+            fig 1. a design system in one component. every layer is a token.
           </p>
         </div>
       </div>
@@ -78,14 +80,14 @@ import SiteFooter from "../components/SiteFooter.astro";
             <span>kham.work</span><span class="folio-run">Selected work</span>
           </p>
           <h2 class="band-title">
-            Systems, products, and the prototypes that got them there.
+            Design systems, prototypes, and software that shipped.
           </h2>
         </header>
 
         <article class="feature-band">
           <div class="feature-band-copy">
             <p class="org">
-              <span>Microsoft CoreAI · systems</span><span>2025 — present</span>
+              <span>Microsoft CoreAI · systems</span><span>2025-present</span>
             </p>
             <h3>AI Foundry Design System &amp; Foundry Toolkit</h3>
             <p class="lede-sm">
@@ -124,7 +126,7 @@ import SiteFooter from "../components/SiteFooter.astro";
               role="img"
               aria-label="Code figure showing a vsc-ui-react snippet with rendered button and input components"
             >
-              <div class="vsc-bar">Button.stories.tsx — vsc-ui-react</div>
+              <div class="vsc-bar">Button.stories.tsx · vsc-ui-react</div>
               <div class="vsc-code">
                 <span class="c1">import</span> &#123; VscButton &#125; <span
                   class="c1">from</span
@@ -151,7 +153,7 @@ import SiteFooter from "../components/SiteFooter.astro";
               role="img"
               aria-label="Code figure showing a charm-button web component snippet with design token swatches"
             >
-              <div class="vsc-bar">button.stories.mdx — @charm-ux/core</div>
+              <div class="vsc-bar">button.stories.mdx · @charm-ux/core</div>
               <div class="vsc-code">
                 <span class="c1">import</span>
                 <span class="c2"
@@ -175,7 +177,7 @@ import SiteFooter from "../components/SiteFooter.astro";
           </div>
           <div class="proof-copy">
             <p class="org">
-              <span>open source · systems</span><span>2023 — present</span>
+              <span>open source · systems</span><span>2023-present</span>
             </p>
             <h3>Charm UX</h3>
             <p class="lede-sm">
@@ -183,7 +185,7 @@ import SiteFooter from "../components/SiteFooter.astro";
               library and is now public: 30+ accessible, headless Lit web
               components, themed through a dedicated token package. I contribute
               to building its core. <strong
-                >You're looking at it — this portfolio is built on Charm.</strong
+                >You're looking at it. This portfolio is built on Charm.</strong
               >
             </p>
             <div class="card-links">
@@ -211,35 +213,26 @@ import SiteFooter from "../components/SiteFooter.astro";
             <span class="ship-mark">design → production</span>
             <img
               class="product-cover"
-              src="/images/recipe-room.jpg"
-              alt="The Recipe Room cookbook interface with recipe cards and detail view"
+              src="/images/athletic.jpg"
+              alt="The Athletic Advertising marketing site with sports-elevated hero and mobile ad formats"
               loading="lazy"
             />
           </div>
           <div class="feature-band-copy">
             <p class="org">
-              <span>independent · product</span><span>2025 — present</span>
+              <span>independent · software</span><span>2026</span>
             </p>
-            <h3>The Recipe Room</h3>
+            <h3>The Athletic Advertising</h3>
             <p class="lede-sm">
-              A full product from first schema to live PWA: Postgres data model,
-              GPT-4o vision recipe extract, chef assistant, and the cookbook UI
-              cooks use. Proof that I don't stop at the component layer — I ship
-              the app.
+              Production marketing site from design through deploy: ad
+              formats, specs, and proof pages on Astro SSG and Content
+              Collections.
             </p>
             <div class="card-links">
-              <a href="/work/the-recipe-room" class="case-link"
-                >Read the case study →</a
-              >
               <a
-                href="https://www.thereciperoom.net/"
+                href="https://theathleticadvertising.com/"
                 target="_blank"
                 rel="noopener">Live site ↗</a
-              >
-              <a
-                href="https://github.com/khamudom/the-recipe-room"
-                target="_blank"
-                rel="noopener">GitHub ↗</a
               >
             </div>
           </div>
@@ -249,25 +242,33 @@ import SiteFooter from "../components/SiteFooter.astro";
           <li class="work-row">
             <img
               class="work-thumb"
-              src="/images/athletic.jpg"
+              src="/images/recipe-room.jpg"
               alt=""
               loading="lazy"
             />
             <div class="work-row-body">
               <p class="org">
-                <span>independent · product</span><span>2026</span>
+                <span>independent · software</span><span>2025-present</span>
               </p>
-              <h3>The Athletic Advertising</h3>
+              <h3>The Recipe Room</h3>
               <p>
-                Production marketing site from design through deploy — ad
-                formats, specs, and proof pages on Astro SSG and Content
-                Collections.
+                Full product from schema to live PWA: Postgres data model, GPT-4o
+                vision recipe extract, chef assistant, and the cookbook UI cooks
+                use. I don't stop at the component layer. I ship the app.
               </p>
               <div class="card-links">
+                <a href="/work/the-recipe-room" class="case-link"
+                  >Read the case study →</a
+                >
                 <a
-                  href="https://theathleticadvertising.com/"
+                  href="https://www.thereciperoom.net/"
                   target="_blank"
                   rel="noopener">Live site ↗</a
+                >
+                <a
+                  href="https://github.com/khamudom/the-recipe-room"
+                  target="_blank"
+                  rel="noopener">GitHub ↗</a
                 >
               </div>
             </div>
@@ -282,7 +283,7 @@ import SiteFooter from "../components/SiteFooter.astro";
             <div class="work-row-body">
               <p class="org">
                 <span>Microsoft Web Platform · prototype</span><span
-                  >2017 — 2021</span
+                  >2017-2021</span
                 >
               </p>
               <h3>Microsoft Edge</h3>
@@ -308,7 +309,7 @@ import SiteFooter from "../components/SiteFooter.astro";
             <div class="work-row-body">
               <p class="org">
                 <span>Microsoft Web Platform · systems</span><span
-                  >2017 — 2021</span
+                  >2017-2021</span
                 >
               </p>
               <h3>FAST &amp; Fluent UI Web Components</h3>
@@ -338,12 +339,12 @@ import SiteFooter from "../components/SiteFooter.astro";
             />
             <div class="work-row-body">
               <p class="org">
-                <span>Microsoft Xbox · product</span><span>2012 — 2017</span>
+                <span>Microsoft Xbox · software</span><span>2012-2017</span>
               </p>
               <h3>Xbox One Dashboard</h3>
               <p>
                 Core UI and prototypes across Home, Community, Store, and One
-                Guide — XAML/MVVM, 10-foot TV experience through three console
+                Guide. XAML/MVVM, 10-foot TV experience through three console
                 releases.
               </p>
               <div class="card-links">
@@ -365,7 +366,7 @@ import SiteFooter from "../components/SiteFooter.astro";
             <span>kham.approach</span><span class="folio-run">Principles</span>
           </p>
           <h2 class="band-title">
-            Prototype it. Ship it. Then make it a system.
+            Prototype. Ship. Systematize.
           </h2>
         </header>
         <ol class="manifesto">
@@ -376,7 +377,7 @@ import SiteFooter from "../components/SiteFooter.astro";
               <p>
                 Nine years building 3D game worlds taught me to make things you
                 can walk through. I'd rather code a rough live version and try
-                it than review a static mock — then harden what works into
+                it than review a static mock. Then I harden what works into
                 production.
               </p>
             </div>
@@ -384,11 +385,11 @@ import SiteFooter from "../components/SiteFooter.astro";
           <li>
             <span class="manifesto-num" aria-hidden="true">02</span>
             <div>
-              <h3>Ship the product, not just the pieces</h3>
+              <h3>Ship the whole app</h3>
               <p>
-                Schema, API, UI, deploy. I've taken products from first sketch
-                to a live URL — The Recipe Room, Athletic Advertising — and
-                built the platform UI at Microsoft that millions of people use.
+                Schema, API, UI, deploy. I've taken apps from first sketch to a
+                live URL (The Recipe Room, Athletic Advertising) and built
+                platform UI at Microsoft that millions of people use.
               </p>
             </div>
           </li>
@@ -398,7 +399,7 @@ import SiteFooter from "../components/SiteFooter.astro";
               <h3>Accessibility is architecture</h3>
               <p>
                 Keyboard navigation, screen reader support, and high contrast
-                from the start — bolting them on later never works. I've done
+                from the start. Bolting them on later never works. I've done
                 the WCAG and ARIA cleanup from Edge to AI Foundry.
               </p>
             </div>
@@ -409,8 +410,8 @@ import SiteFooter from "../components/SiteFooter.astro";
               <h3>Build components developers want to use</h3>
               <p>
                 In a design system, other developers are the users. Clear API,
-                predictable behavior, real examples — get that right and teams
-                adopt; get it wrong and they build workarounds.
+                predictable behavior, real examples. Get that right and teams
+                adopt. Get it wrong and they build workarounds.
               </p>
             </div>
           </li>
@@ -431,7 +432,7 @@ import SiteFooter from "../components/SiteFooter.astro";
         </header>
         <ol class="timeline">
           <li>
-            <span class="yr">2025 —</span>
+            <span class="yr">2025+</span>
             <div>
               <span class="role">UX Engineer · Microsoft CoreAI</span>
               <div class="org2">AI Foundry design system · contract</div>
@@ -449,7 +450,7 @@ import SiteFooter from "../components/SiteFooter.astro";
               >
               <div class="org2">Charm UX design system · contract</div>
               <p class="desc">
-                Core components for Charm UX — accessible, headless Lit Web
+                Core components for Charm UX: accessible, headless Lit Web
                 Components with design-token theming.
               </p>
             </div>
@@ -471,8 +472,8 @@ import SiteFooter from "../components/SiteFooter.astro";
               <span class="role">UX Engineer · Microsoft Web Prototyping</span>
               <div class="org2">Concept → working software</div>
               <p class="desc">
-                Interactive prototypes that de-risked product decisions — live
-                builds over static mocks to align stakeholders early.
+                Interactive prototypes for early product decisions. Live builds
+                over static mocks so stakeholders could try the idea.
               </p>
             </div>
           </li>
@@ -534,7 +535,7 @@ import SiteFooter from "../components/SiteFooter.astro";
             <dd>React · Next.js · Lit · FAST · Astro · Web Components</dd>
           </div>
           <div class="catalog-row">
-            <dt>product</dt>
+            <dt>software</dt>
             <dd>
               End-to-end delivery · Schema → UI · PWAs · Content Collections ·
               Production deploys
