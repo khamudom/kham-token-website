@@ -18,7 +18,7 @@
 :root {
   --accent-h: 39;
   --accent-s: 120;
-  --radius: 12px;
+  --radius: 4px;
   --border-w: 1px;
 
   --font-display: "Exo 2", system-ui, sans-serif;
@@ -125,7 +125,7 @@
   --default-border-color: var(--line);
   --default-border-size: var(--border-w);
 
-  --button-border-radius: var(--border-radius-pill);
+  --button-border-radius: var(--radius);
   --button-font-weight: 600;
   --button-padding-x: 1.6rem;
   --button-padding-y: 0.85rem;
@@ -316,7 +316,7 @@
   --button-focus-bg-color: var(--accent);
   --button-focus-fg-color: var(--accent-contrast);
   --button-focus-border-color: var(--accent);
-  --button-border-radius: var(--border-radius-pill);
+  --button-border-radius: var(--radius);
   --button-padding-x: 1.1rem;
   --button-padding-y: 0.5rem;
   --button-hover-bg-color: var(--color-primary-600);

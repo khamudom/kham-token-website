@@ -19,7 +19,7 @@ interface TokenState {
 
 const TOKEN_KEY = 'kham.tokens';
 const DEFAULT_THEME: ThemeName = 'light'; /* cream key-visual day */
-const TOKEN_DEFAULTS = { hue: 39, saturation: 120, radius: 12 } as const;
+const TOKEN_DEFAULTS = { hue: 39, saturation: 120, radius: 4 } as const;
 
 const root = document.documentElement;
 

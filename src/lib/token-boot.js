@@ -4,7 +4,7 @@
   var theme = 'light';
   var hue = 39;
   var saturation = 120;
-  var radius = 12;
+  var radius = 4;
   try {
     var raw = localStorage.getItem(KEY);
     if (raw) {

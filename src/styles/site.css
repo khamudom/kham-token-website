@@ -30,7 +30,6 @@ body {
   --step-4: clamp(2.4rem, 1rem + 4.5vw, 4.8rem);
   --step-feature: clamp(1.45rem, 1.1rem + 1.2vw, 2rem);
   --step-proof: clamp(1.35rem, 1.05rem + 1vw, 1.75rem);
-  --step-numeral: clamp(1.75rem, 1.2rem + 1.5vw, 2.4rem);
   --step-year: clamp(1.6rem, 1rem + 2vw, 2.4rem);
   --cap: 0.68rem;
   --cap-sm: 0.64rem;
@@ -113,7 +112,9 @@ header.site {
 }
 .brand,
 .brand:visited,
-.brand:active {
+.brand:hover,
+.brand:active,
+.brand:focus {
   justify-self: start;
   font-family: var(--font-display);
   font-weight: 700;
@@ -184,7 +185,6 @@ header.site {
 
 /* ============ hero: horizon split ============ */
 .horizon {
-  border-bottom: var(--border-w) solid var(--line);
   background: var(--paper);
   overflow: clip;
 }
@@ -222,13 +222,6 @@ header.site {
   font-style: normal;
   color: var(--accent-ink);
 }
-.claim-serif {
-  font-family: var(--font-serif);
-  font-size: clamp(1.15rem, 1rem + 0.6vw, 1.45rem);
-  font-weight: 500;
-  color: var(--accent-ink);
-  margin: 1.1rem 0 0;
-}
 .lede {
   font-size: var(--step-0);
   color: var(--muted);
@@ -249,19 +242,6 @@ header.site {
   gap: 0.85rem;
   margin-top: 2rem;
 }
-.hero-meta {
-  display: flex;
-  flex-direction: column;
-  gap: 0.45rem;
-  margin: 2rem 0 0;
-  font-family: var(--font-mono);
-  font-size: var(--step--1);
-  color: var(--muted);
-}
-.hero-meta .charm-note {
-  color: var(--accent-ink);
-}
-
 /* exploded anatomy: hover only on the diagram box (not the column) */
 .stage {
   perspective: 1400px;
@@ -439,7 +419,6 @@ header.site {
 }
 .band-deep {
   background: var(--surface-2);
-  border-block: var(--border-w) solid var(--line);
 }
 .band-head {
   margin-bottom: clamp(2.25rem, 5vw, 3.75rem);
@@ -457,22 +436,16 @@ header.site {
 }
 .folio {
   display: flex;
-  justify-content: space-between;
   align-items: baseline;
-  gap: 1.5rem;
+  gap: 0;
   color: var(--gold-ink);
-  border-top: var(--border-w) solid var(--line);
-  padding-top: 0.75rem;
   margin: 0 0 1.25rem;
   text-transform: uppercase;
 }
 .folio .folio-run {
-  text-align: right;
-  font-family: var(--font-serif);
-  font-size: 0.95rem;
-  letter-spacing: 0.02em;
-  text-transform: none;
-  color: var(--ink);
+  letter-spacing: inherit;
+  text-transform: inherit;
+  color: inherit;
 }
 .org {
   font-family: var(--font-mono);
@@ -542,6 +515,8 @@ header.site {
   flex-direction: column;
   gap: 0.85rem;
   align-items: flex-start;
+  min-width: 0;
+  max-width: 100%;
 }
 .ship-mark {
   font-family: var(--font-mono);
@@ -584,10 +559,15 @@ header.site {
   border: var(--border-w) solid var(--line);
   border-radius: var(--border-radius-md);
 }
+.proof-media {
+  min-width: 0;
+  max-width: 100%;
+}
 .proof-copy {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  min-width: 0;
 }
 .proof-copy h3 {
   font-size: var(--step-proof);
@@ -651,6 +631,8 @@ header.site {
   font-family: var(--font-mono);
   overflow: hidden;
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
 }
 .card-cover .vsc-bar {
   display: flex;
@@ -662,14 +644,20 @@ header.site {
   letter-spacing: 0.04em;
   color: var(--muted);
   text-transform: uppercase;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .card-cover .vsc-code {
   flex: 1;
+  min-width: 0;
   padding: 0.9rem 1rem;
   font-size: var(--cap-sm);
   line-height: 1.9;
   color: var(--ink);
   white-space: pre;
+  overflow: hidden;
 }
 .card-cover .vsc-code .c1 {
   color: var(--accent-ink);
@@ -748,7 +736,7 @@ header.site {
 }
 .manifesto li {
   display: grid;
-  grid-template-columns: 3.5rem minmax(0, 1fr);
+  grid-template-columns: 7.5rem minmax(0, 1fr);
   gap: 1.25rem;
   padding-block: 1.75rem;
   border-top: var(--border-w) solid var(--line);
@@ -756,14 +744,15 @@ header.site {
 .manifesto li:last-child {
   border-bottom: var(--border-w) solid var(--line);
 }
-.manifesto-num {
-  font-family: var(--font-display);
-  font-size: var(--step-numeral);
-  font-weight: 750;
-  letter-spacing: -0.03em;
+.manifesto-tag {
+  font-family: var(--font-mono);
+  font-size: var(--cap);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   color: var(--accent-ink);
-  line-height: 1;
-  padding-top: 0.15rem;
+  line-height: 1.3;
+  padding-top: 0.35rem;
 }
 .manifesto h3 {
   font-size: var(--step-1);
@@ -917,7 +906,6 @@ header.site {
 
 /* ============ footer ============ */
 footer.site {
-  border-top: var(--border-w) solid var(--line);
   padding-block: clamp(3rem, 7vw, 5.5rem) 2.5rem;
   background: var(--surface-2);
 }
