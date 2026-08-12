@@ -1088,7 +1088,7 @@ ch-button::part(button-control):focus:not(:focus-visible) {
   font-family: var(--font-mono);
 }
 
-/* ============ case study pages ============ */
+/* ============ project pages ============ */
 .case-page > .wrap {
   background: var(--surface-2);
   border: var(--border-w) solid var(--line);
@@ -1276,7 +1276,7 @@ section:not(.band):not(.horizon) {
   border-radius: var(--radius);
   background: var(--media-ground);
 }
-/* Edge case study: keep product shots closer to the prose measure */
+/* Edge project: keep product shots closer to the prose measure */
 #case-edge .shot {
   max-width: min(100%, 36rem);
 }

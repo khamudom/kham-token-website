@@ -1,7 +1,7 @@
 /* Apply saved theme tokens before first paint. Keep in sync with tokens.ts. */
 (function () {
   var KEY = 'kham.tokens';
-  var theme = 'light';
+  var theme = 'dark';
   var hue = 39;
   var saturation = 120;
   var radius = 4;

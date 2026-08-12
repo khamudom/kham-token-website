@@ -8,12 +8,12 @@ The site is built on **[@charm-ux/core](https://github.com/charm-ux/core)**: an 
 
 - **Live token panel**: the "tokens" button opens a `ch-push-pane` with theme (light / dark / high-contrast), accent hue, and corner radius controls. These mutate Charm's token layer at runtime, so the whole page (Charm components included) re-themes live.
 - **Charm theme override**: `src/styles/theme.css` remaps Charm's primary ramp to `oklch(… var(--accent-h))`, the neutral ramp to porcelain (with dark and high-contrast variants), and shape tokens to a live `--radius` token. No component CSS is forked.
-- **Case study with hash routing**: `#/work/the-recipe-room` opens a full architecture case study (trust-zone diagram, request flow, decisions & tradeoffs).
+- **Project pages**: `/work/the-recipe-room` and other work routes cover architecture, request flow, and decisions & tradeoffs.
 - **Accessibility**: skip link, visible focus everywhere, `prefers-reduced-motion` and `prefers-color-scheme` respected, keyboard-operable panel, semantic landmarks.
 
 ## Stack
 
-- [Astro](https://astro.build/): build-time components, static HTML output, real URLs per case study
+- [Astro](https://astro.build/): build-time components, static HTML output, real URLs per project
 - [@charm-ux/core](https://www.npmjs.com/package/@charm-ux/core) (Lit web components) as the component layer
 - TypeScript (strict) for all site behavior
 
@@ -30,13 +30,13 @@ npm run preview    # preview the production build
 ## Structure
 
 ```
-├── index.html              # page markup (home + four case study views)
+├── index.html              # page markup (home + four project views)
 ├── src/
 │   ├── main.ts             # entry: styles, charm, feature init
 │   ├── charm.ts            # the Charm components this page registers
 │   ├── lib/
 │   │   ├── tokens.ts       # token drawer: theme/hue/radius, persistence, reset
-│   │   ├── router.ts       # hash router for case study views
+│   │   ├── router.ts       # hash router for project views
 │   │   ├── effects.ts      # scroll reveal, video facades
 │   │   └── dom.ts          # Charm element typings + strict DOM lookup
 │   └── styles/
