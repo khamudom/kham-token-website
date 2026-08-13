@@ -85,8 +85,7 @@ a:hover {
   padding-inline: clamp(1.25rem, 4vw, 2.5rem);
 }
 
-.cap,
-.folio {
+.cap {
   font-family: var(--font-mono);
   font-size: var(--cap);
   letter-spacing: 0.12em;
@@ -441,19 +440,6 @@ header.site {
 .band-title-sm {
   max-width: 18ch;
 }
-.folio {
-  display: flex;
-  align-items: baseline;
-  gap: 0;
-  color: var(--gold-ink);
-  margin: 0 0 1.25rem;
-  text-transform: uppercase;
-}
-.folio .folio-run {
-  letter-spacing: inherit;
-  text-transform: inherit;
-  color: inherit;
-}
 .org {
   font-family: var(--font-mono);
   font-size: var(--cap);
@@ -525,13 +511,6 @@ header.site {
   min-width: 0;
   max-width: 100%;
 }
-.ship-mark {
-  font-family: var(--font-mono);
-  font-size: var(--cap);
-  letter-spacing: 0.1em;
-  color: var(--accent-ink);
-  text-transform: uppercase;
-}
 .feature-band-media .card-cover {
   border: var(--border-w) solid var(--line);
   border-radius: var(--border-radius-md);
@@ -543,15 +522,21 @@ header.site {
   margin-bottom: clamp(3rem, 6vw, 4.5rem);
   padding-bottom: clamp(3rem, 6vw, 4.5rem);
 }
+.product-band .feature-band-media {
+  overflow: hidden;
+  width: 100%;
+  border: 0;
+  border-radius: var(--border-radius-md);
+  background: var(--media-ground);
+  box-shadow: 0 0 0 var(--border-w) var(--line);
+  line-height: 0;
+}
 .product-cover {
   display: block;
   width: 100%;
   aspect-ratio: 16 / 10;
   object-fit: cover;
   object-position: top;
-  background: var(--surface);
-  border: var(--border-w) solid var(--line);
-  border-radius: var(--border-radius-md);
 }
 
 /* charm proof: reverse split on cream paper (no accent wash) */
@@ -607,7 +592,6 @@ header.site {
   height: 4.75rem;
   object-fit: cover;
   object-position: top;
-  background: var(--surface);
   border-radius: var(--border-radius-xs);
 }
 .work-row-body h3 {
@@ -931,6 +915,7 @@ footer.site {
   font-size: var(--step-3);
   font-weight: 750;
   line-height: 1.1;
+  margin: 0;
 }
 .contact-grid .cta-row {
   margin-top: 2rem;
@@ -1102,23 +1087,6 @@ ch-button::part(button-control):focus:not(:focus-visible) {
   border-radius: var(--radius);
   margin-block: clamp(1.5rem, 4vw, 3rem);
 }
-.eyebrow {
-  font-family: var(--font-mono);
-  font-size: var(--cap);
-  color: var(--muted);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 1.5rem;
-  border-top: var(--border-w) solid var(--line);
-  padding-top: 0.7rem;
-  margin: 0 0 1.25rem;
-}
-.eyebrow .tok {
-  color: var(--gold-ink);
-}
 section:not(.band):not(.horizon) {
   padding-block: clamp(2rem, 5vw, 3.5rem);
 }
@@ -1157,10 +1125,6 @@ section:not(.band):not(.horizon) {
   font-size: var(--step-2);
   padding-top: 0.7rem;
   border-top: var(--border-w) solid var(--line);
-}
-.eyebrow + h2 {
-  border-top: none;
-  padding-top: 0;
 }
 .case-section p {
   max-width: 68ch;
@@ -1276,12 +1240,17 @@ section:not(.band):not(.horizon) {
 .shot figure {
   margin: 0;
 }
+.shot .media-frame {
+  overflow: hidden;
+  border: 0;
+  border-radius: var(--radius);
+  background: var(--media-ground);
+  box-shadow: 0 0 0 var(--border-w) var(--line);
+  line-height: 0;
+}
 .shot img {
   width: 100%;
   display: block;
-  border: var(--border-w) solid var(--line);
-  border-radius: var(--radius);
-  background: var(--media-ground);
 }
 /* Edge project: keep product shots closer to the prose measure */
 #case-edge .shot {
