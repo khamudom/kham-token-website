@@ -25,11 +25,11 @@ body {
   --step--1: clamp(0.76rem, 0.73rem + 0.15vw, 0.84rem);
   --step-0: clamp(0.95rem, 0.9rem + 0.25vw, 1.05rem);
   --step-1: clamp(1.15rem, 1.05rem + 0.5vw, 1.35rem);
-  --step-2: clamp(1.5rem, 1.3rem + 1vw, 2rem);
-  --step-3: clamp(1.85rem, 1.4rem + 2vw, 2.8rem);
-  --step-4: clamp(2.4rem, 1rem + 4.5vw, 4.8rem);
-  --step-feature: clamp(1.45rem, 1.1rem + 1.2vw, 2rem);
-  --step-proof: clamp(1.35rem, 1.05rem + 1vw, 1.75rem);
+  --step-2: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
+  --step-3: clamp(1.45rem, 1.2rem + 1vw, 1.85rem);
+  --step-4: clamp(1.85rem, 1.35rem + 2vw, 2.65rem);
+  --step-feature: clamp(1.25rem, 1.1rem + 0.7vw, 1.5rem);
+  --step-proof: clamp(1.2rem, 1.05rem + 0.55vw, 1.4rem);
   --step-year: clamp(1.6rem, 1rem + 2vw, 2.4rem);
   --cap: 0.68rem;
   --cap-sm: 0.64rem;
@@ -39,9 +39,10 @@ h1,
 h2,
 h3 {
   font-family: var(--font-display);
-  line-height: 1.1;
+  font-weight: 600;
+  line-height: 1.2;
   margin: 0 0 0.5em;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.01em;
   text-wrap: balance;
 }
 p {
@@ -209,20 +210,20 @@ header.site {
   text-transform: uppercase;
   margin: 0 0 1.5rem;
   display: flex;
-  flex-wrap: wrap;
-  column-gap: 0;
-  row-gap: 0.3rem;
+  flex-wrap: nowrap;
+  align-items: baseline;
 }
-.claim-kicker .kicker-join {
-  white-space: pre;
+.claim-kicker .kicker-pair + .kicker-pair::before {
+  content: "·";
+  margin-inline: 0.55em;
 }
 .claim {
   font-size: var(--step-4);
-  font-weight: 800;
-  line-height: 1.05;
-  letter-spacing: -0.02em;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
   margin: 0;
-  max-width: 16ch;
+  max-width: 22ch;
 }
 .claim em {
   font-style: normal;
@@ -252,7 +253,7 @@ header.site {
 .stage {
   perspective: 1400px;
   display: grid;
-  align-content: center;
+  align-content: end;
   justify-items: end;
   row-gap: 2.75rem;
   position: relative;
@@ -427,14 +428,14 @@ header.site {
   background: var(--surface-2);
 }
 .band-head {
-  margin-bottom: clamp(2.25rem, 5vw, 3.75rem);
+  margin-bottom: clamp(1.75rem, 4vw, 2.75rem);
 }
 .band-title {
   font-size: var(--step-3);
-  font-weight: 750;
-  line-height: 1.1;
-  letter-spacing: -0.015em;
-  max-width: 20ch;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  max-width: 22ch;
   margin: 0;
 }
 .band-title-sm {
@@ -498,10 +499,10 @@ header.site {
 }
 .feature-band-copy h3 {
   font-size: var(--step-feature);
-  font-weight: 750;
+  font-weight: 600;
   margin: 0;
-  letter-spacing: -0.015em;
-  max-width: 18ch;
+  letter-spacing: -0.01em;
+  max-width: 22ch;
 }
 .feature-band-media {
   display: flex;
@@ -563,7 +564,7 @@ header.site {
 }
 .proof-copy h3 {
   font-size: var(--step-proof);
-  font-weight: 750;
+  font-weight: 600;
   margin: 0;
 }
 .proof-media .card-cover {
@@ -596,7 +597,7 @@ header.site {
 }
 .work-row-body h3 {
   font-size: var(--step-1);
-  font-weight: 700;
+  font-weight: 600;
   margin: 0.35rem 0 0.4rem;
   letter-spacing: -0.01em;
 }
@@ -747,7 +748,7 @@ header.site {
 }
 .manifesto h3 {
   font-size: var(--step-1);
-  font-weight: 700;
+  font-weight: 600;
   margin: 0 0 0.55rem;
 }
 .manifesto p {
@@ -913,8 +914,8 @@ footer.site {
 }
 .contact-grid h2 {
   font-size: var(--step-3);
-  font-weight: 750;
-  line-height: 1.1;
+  font-weight: 600;
+  line-height: 1.2;
   margin: 0;
 }
 .contact-grid .cta-row {
@@ -1105,9 +1106,9 @@ section:not(.band):not(.horizon) {
 .case-head h1,
 .case-title {
   font-size: var(--step-3);
-  font-weight: 750;
-  line-height: 1.1;
-  max-width: 24ch;
+  font-weight: 600;
+  line-height: 1.2;
+  max-width: 28ch;
   margin: 0;
 }
 .case-actions {
@@ -1360,10 +1361,11 @@ section:not(.band):not(.horizon) {
   }
   .claim-kicker {
     flex-direction: column;
+    flex-wrap: wrap;
     align-items: flex-start;
     row-gap: 0.35rem;
   }
-  .claim-kicker .kicker-join {
-    display: none;
+  .claim-kicker .kicker-pair + .kicker-pair::before {
+    content: none;
   }
 }
