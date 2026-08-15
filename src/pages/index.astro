@@ -63,95 +63,59 @@ import SiteFooter from "../components/SiteFooter.astro";
           </h2>
         </header>
 
-        <article class="feature-band">
+        <article class="feature-band product-band">
           <div class="feature-band-copy">
             <p class="org">
               <span>Microsoft CoreAI · systems</span><span>2025-present</span>
             </p>
-            <h3>AI Foundry Design System &amp; Foundry Toolkit</h3>
+            <h3>CoreAI Design System</h3>
             <p class="lede-sm">
-              On the CoreAI team I build React + TypeScript components for
-              Microsoft's AI Foundry design system and handle WCAG and ARIA
-              fixes across the platform. I also work with the Foundry Toolkit
-              extension team on <strong>vsc-ui-react</strong>: an open-source
-              library of VS Code-styled Fluent UI v9 components that ships
-              inside an extension with 1.2M+ installs.
+              A design system for internal Microsoft apps, built on Fluent UI
+              v9. I contribute to the React theme package, Storybook, and an
+              MCP so humans and agents consume the same components. I also work
+              on Microsoft Foundry, and with the Foundry Toolkit extension team
+              on <strong>vsc-ui-react</strong>: VS Code-styled components on
+              Fluent that ship inside an extension with 1.2M+ installs.
             </p>
             <div class="card-links">
               <a href="https://ai.azure.com/home" target="_blank" rel="noopener"
                 >Microsoft Foundry ↗</a
               >
               <a
-                href="https://github.com/vuxhub/vsc-ui-react"
-                target="_blank"
-                rel="noopener">GitHub ↗</a
-              >
-              <a
-                href="https://www.npmjs.com/package/vsc-ui-react"
-                target="_blank"
-                rel="noopener">npm ↗</a
-              >
-              <a
                 href="https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio"
                 target="_blank"
                 rel="noopener">Foundry Toolkit ↗</a
               >
+              <a
+                href="https://github.com/vuxhub/vsc-ui-react"
+                target="_blank"
+                rel="noopener">GitHub vsc-ui-react ↗</a
+              >
+              <a
+                href="https://www.npmjs.com/package/vsc-ui-react"
+                target="_blank"
+                rel="noopener">npm vsc-ui-react ↗</a
+              >
             </div>
           </div>
           <div class="feature-band-media">
-            <div
-              class="card-cover"
-              role="img"
-              aria-label="Code figure showing a vsc-ui-react snippet with rendered button and input components"
-            >
-              <div class="vsc-bar">vsc-ui-react</div>
-              <div class="vsc-code">
-                <span class="c1">import</span> &#123; VscButton &#125; <span
-                  class="c1">from</span
-                >
-                <span class="c2">'vsc-ui-react'</span>;
-
-                <span class="c3">// VS Code themed, Fluent under the hood</span>
-                &lt;VscButton appearance=<span class="c2">"primary"</span>&gt;
-                Save &lt;/VscButton&gt;
-              </div>
-              <div class="vsc-ui" aria-hidden="true">
-                <span class="vsc-btn">Save</span>
-                <span class="vsc-btn sec">Cancel</span>
-                <span class="vsc-input">Search…</span>
-              </div>
-            </div>
+            <img
+              class="product-cover"
+              src="/images/foundry.jpg"
+              alt="Microsoft Foundry landing page with the headline The AI app and agent factory"
+              loading="lazy"
+            />
           </div>
         </article>
 
         <article class="proof-strip">
           <div class="proof-media">
-            <div
-              class="card-cover charm"
-              role="img"
-              aria-label="Code figure showing a charm-button web component snippet with design token swatches"
-            >
-              <div class="vsc-bar">@charm-ux/core</div>
-              <div class="vsc-code">
-                <span class="c1">import</span>
-                <span class="c2"
-                  >'@charm-ux/core/components/button/button.js'</span
-                >;
-
-                <span class="c3">// headless, themable, framework-agnostic</span
-                >
-                &lt;charm-button variant=<span class="c2">"primary"</span>&gt;
-                Click me &lt;/charm-button&gt;
-              </div>
-              <div class="charm-swatches" aria-hidden="true">
-                <i style="background: var(--color-primary-300)"></i><i
-                  style="background: var(--color-primary-500)"></i><i
-                  style="background: var(--color-primary-700)"></i><i
-                  style="background: var(--surface-2)"></i><i
-                  style="background: var(--ink)"></i>
-                <span class="lbl2">generateTheme(tokens)</span>
-              </div>
-            </div>
+            <img
+              class="product-cover"
+              src="/images/charm.jpg"
+              alt="Charm documentation site with Welcome to Charm heading and View components button"
+              loading="lazy"
+            />
           </div>
           <div class="proof-copy">
             <p class="org">
@@ -161,10 +125,9 @@ import SiteFooter from "../components/SiteFooter.astro";
             <p class="lede-sm">
               An open-source design system that began as an internal Microsoft
               library and is now public: 30+ accessible, headless Lit web
-              components, themed through a dedicated token package. I contribute
-              to building its core. <strong
-                >You're looking at it. This portfolio is built on Charm.</strong
-              >
+              components in <strong>@charm-ux/core</strong>, plus
+              <strong>@charm-ux/fui</strong> for Fluent-aligned components on
+              top.
             </p>
             <div class="card-links">
               <a
@@ -175,12 +138,17 @@ import SiteFooter from "../components/SiteFooter.astro";
               <a
                 href="https://github.com/charm-ux/core"
                 target="_blank"
-                rel="noopener">GitHub ↗</a
+                rel="noopener">GitHub @charm-ux/core ↗</a
               >
               <a
                 href="https://www.npmjs.com/package/@charm-ux/core"
                 target="_blank"
-                rel="noopener">npm ↗</a
+                rel="noopener">npm @charm-ux/core ↗</a
+              >
+              <a
+                href="https://www.npmjs.com/package/@charm-ux/fui"
+                target="_blank"
+                rel="noopener">npm @charm-ux/fui ↗</a
               >
             </div>
           </div>
@@ -371,7 +339,7 @@ import SiteFooter from "../components/SiteFooter.astro";
               <h3>Don't bolt accessibility on later</h3>
               <p>
                 Keyboard, screen reader, and high contrast from the start. I've
-                done the WCAG and ARIA cleanup from Edge to AI Foundry.
+                done the WCAG and ARIA cleanup from Edge to CoreAI.
               </p>
             </div>
           </li>
@@ -400,10 +368,11 @@ import SiteFooter from "../components/SiteFooter.astro";
             <span class="yr">2025+</span>
             <div>
               <span class="role">UX Engineer · Microsoft CoreAI</span>
-              <div class="org2">AI Foundry design system · contract</div>
+              <div class="org2">CoreAI design system · contract</div>
               <p class="desc">
-                React + TypeScript components for AI-powered developer
-                experiences; platform-wide accessibility improvements.
+                Theme package on Fluent UI v9 for internal Microsoft apps;
+                Microsoft Foundry, Foundry Toolkit, Storybook, MCP, and
+                accessibility.
               </p>
             </div>
           </li>
@@ -415,8 +384,9 @@ import SiteFooter from "../components/SiteFooter.astro";
               >
               <div class="org2">Charm UX design system · contract</div>
               <p class="desc">
-                Core components for Charm UX: accessible, headless Lit Web
-                Components with design-token theming.
+                Core components for Charm UX: @charm-ux/core and
+                @charm-ux/fui, headless Lit components with design-token
+                theming.
               </p>
             </div>
           </li>

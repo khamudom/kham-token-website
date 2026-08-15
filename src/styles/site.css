@@ -512,12 +512,8 @@ header.site {
   min-width: 0;
   max-width: 100%;
 }
-.feature-band-media .card-cover {
-  border: var(--border-w) solid var(--line);
-  border-radius: var(--border-radius-md);
-}
 
-/* product proof: photo plate (systems bands use code figures) */
+/* product proof: photo plate */
 .product-band {
   border-bottom: var(--border-w) solid var(--line);
   margin-bottom: clamp(3rem, 6vw, 4.5rem);
@@ -555,6 +551,12 @@ header.site {
 .proof-media {
   min-width: 0;
   max-width: 100%;
+  overflow: hidden;
+  width: 100%;
+  border-radius: var(--border-radius-md);
+  background: var(--media-ground);
+  box-shadow: 0 0 0 var(--border-w) var(--line);
+  line-height: 0;
 }
 .proof-copy {
   display: flex;
@@ -566,10 +568,6 @@ header.site {
   font-size: var(--step-proof);
   font-weight: 600;
   margin: 0;
-}
-.proof-media .card-cover {
-  border-radius: var(--border-radius-md);
-  border: var(--border-w) solid var(--line);
 }
 
 /* remaining work as magazine index rows */
@@ -613,98 +611,6 @@ header.site {
 }
 .work-row-body .card-links {
   margin-top: 0.65rem;
-}
-
-.card-cover {
-  aspect-ratio: 16 / 10;
-  background: var(--surface);
-  display: flex;
-  flex-direction: column;
-  font-family: var(--font-mono);
-  overflow: hidden;
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
-}
-.card-cover .vsc-bar {
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-  padding: 0.55rem 0.8rem;
-  border-bottom: var(--border-w) solid var(--line);
-  font-size: var(--cap-sm);
-  letter-spacing: 0.04em;
-  color: var(--muted);
-  text-transform: uppercase;
-  min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.card-cover .vsc-code {
-  flex: 1;
-  min-width: 0;
-  padding: 0.9rem 1rem;
-  font-size: var(--cap-sm);
-  line-height: 1.9;
-  color: var(--ink);
-  white-space: pre;
-  overflow: hidden;
-}
-.card-cover .vsc-code .c1 {
-  color: var(--accent-ink);
-}
-.card-cover .vsc-code .c2 {
-  color: var(--ink);
-  font-weight: 600;
-}
-.card-cover .vsc-code .c3 {
-  color: var(--muted);
-}
-.card-cover .vsc-ui {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-  padding: 0 1rem 1rem;
-}
-.card-cover .vsc-btn {
-  font-size: var(--cap-sm);
-  padding: 0.3rem 0.8rem;
-  border-radius: var(--border-radius-pill);
-  background: var(--accent);
-  color: var(--accent-contrast);
-}
-.card-cover .vsc-btn.sec {
-  background: transparent;
-  border: var(--border-w) solid var(--rule-ink);
-  color: var(--ink);
-}
-.card-cover .vsc-input {
-  flex: 1;
-  max-width: 40%;
-  font-size: var(--cap-sm);
-  padding: 0.3rem 0.6rem;
-  background: var(--paper);
-  border: var(--border-w) solid var(--line);
-  border-radius: var(--border-radius-half);
-  color: var(--muted);
-}
-.charm-swatches {
-  display: flex;
-  gap: 0.45rem;
-  align-items: center;
-  padding: 0 1rem 1rem;
-}
-.charm-swatches i {
-  width: 1.15rem;
-  height: 1.15rem;
-  border-radius: var(--border-radius-half);
-  border: var(--border-w) solid var(--line);
-}
-.charm-swatches .lbl2 {
-  font-size: var(--cap-sm);
-  color: var(--muted);
-  margin-left: 0.3rem;
 }
 
 /* ============ approach: manifesto ============ */
