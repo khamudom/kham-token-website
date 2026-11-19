@@ -1,0 +1,81 @@
+---
+import Base from "../../layouts/Base.astro";
+---
+
+<Base
+  title="Charm UX · Kham Udom"
+  description="Open-source Lit design system. This portfolio themes @charm-ux/core with design tokens and a custom focus trap for the token drawer."
+>
+  <main id="main">
+    <section class="case-page" id="case-charm" aria-label="Project: Charm UX">
+      <div class="wrap" style="padding-block: clamp(2.5rem, 6vw, 4rem);">
+        <ch-breadcrumb label="Breadcrumb">
+          <ch-breadcrumb-item href="/">kham.udom</ch-breadcrumb-item>
+          <ch-breadcrumb-item href="/#work">work</ch-breadcrumb-item>
+          <ch-breadcrumb-item current="page">charm</ch-breadcrumb-item>
+        </ch-breadcrumb>
+
+        <div class="case-head">
+          <div>
+            <h1 tabindex="-1" class="case-title">Charm UX</h1>
+            <div class="chips">
+              <ch-badge>Lit</ch-badge><ch-badge>Web Components</ch-badge><ch-badge>Design tokens</ch-badge><ch-badge>TypeScript</ch-badge><ch-badge>Accessibility</ch-badge>
+            </div>
+          </div>
+          <div class="case-actions">
+            <ch-button class="kh-btn-primary" href="https://charm-ux.github.io/core/" target="_blank">Charm site ↗</ch-button>
+            <ch-button class="kh-btn-ghost" href="https://github.com/charm-ux/core" target="_blank">GitHub ↗</ch-button>
+          </div>
+        </div>
+
+        <div class="case-section" style="margin-top: 2rem;">
+          <p><strong>The work.</strong> Charm UX began as an internal Microsoft library and is now public. <a href="https://www.npmjs.com/package/@charm-ux/core" target="_blank" rel="noopener"><code>@charm-ux/core</code></a> is 30+ accessible, headless Lit components. <a href="https://www.npmjs.com/package/@charm-ux/fui" target="_blank" rel="noopener"><code>@charm-ux/fui</code></a> is the Fluent-aligned set on top. I contribute to the core components. I do not maintain the whole library.</p>
+          <p>This portfolio is one consumer. Buttons, cards, badges, breadcrumbs, radios, and the token drawer are <code>ch-*</code> elements registered from <code>@charm-ux/core</code> 0.4.0. The look is a theme override. Component CSS is not forked.</p>
+        </div>
+
+        <div class="shot">
+          <figure>
+            <div class="media-frame">
+              <img src="/images/charm.jpg" alt="Charm documentation site with Welcome to Charm heading and View components button" loading="lazy" />
+            </div>
+            <figcaption>fig 1. the Charm documentation site.</figcaption>
+          </figure>
+        </div>
+
+        <div class="case-section">
+          <h2>Token architecture</h2>
+          <p>The drawer writes three custom properties and one attribute on <code>:root</code>: <code>--accent-h</code>, <code>--accent-s</code>, <code>--radius</code>, and <code>data-theme</code> (<code>light</code>, <code>dark</code>, or <code>contrast</code>). <code>theme.css</code> rebuilds Charm's primary ramp from those variables. A mid step looks like this:</p>
+          <p><code>--color-primary-500: oklch(0.6 calc(0.17 * var(--accent-s) / 100) var(--accent-h));</code></p>
+          <p>Shape tokens are multiples of <code>--radius</code>, including <code>--button-border-radius</code>, <code>--card-border-radius</code>, and <code>--dialog-border-radius</code>. The hero diagram uses the same accent, so the exploded button and the live components recolor together. Values persist in <code>localStorage</code> under <code>kham.tokens</code>. Reset restores hue 39, saturation 120, radius 4, and the dark theme.</p>
+          <p>High contrast is a separate contract. <code>data-theme="contrast"</code> sets a fixed turquoise ramp and a 2px border. The drawer disables hue, saturation, and radius while that theme is on, so the sliders cannot paint over the forced palette.</p>
+        </div>
+
+        <div class="case-section">
+          <h2>Focus management</h2>
+          <p>The drawer is a <code>ch-dialog</code> with <code>position="end"</code>. In <code>@charm-ux/core</code> 0.4.0 the dialog's <code>FocusTrapController</code> is commented out, and the inner <code>&lt;dialog&gt;</code> is <code>tabindex="0"</code> while open. Tab stops on that empty shell between the real controls. <code>src/lib/tokens.ts</code> replaces that cycle while the drawer is fully open.</p>
+          <ol class="flow-steps">
+            <li><span><strong>Who is in the trap.</strong> The list is the close button in the shadow root (<code>part="dialog-close-button"</code>), then the light-DOM <code>ch-radio</code> elements, range inputs, and <code>ch-button</code> elements. Disabled, hidden, or zero-size nodes are dropped.</span></li>
+            <li><span><strong>Open.</strong> On <code>dialog-after-show</code>, the inner dialog's tabindex is set to <code>-1</code> and focus moves to the first control in that list.</span></li>
+            <li><span><strong>Tab.</strong> A capture-phase listener on <code>document</code> handles Tab and Shift+Tab. The active element is resolved through open shadow roots, the index wraps, and the event is stopped so focus cannot land on the shell or leave the drawer.</span></li>
+            <li><span><strong>Escape and the close button.</strong> Escape asks Charm to close with source <code>keyboard</code>. Enter or Space on the close button is also a keyboard close: keydown sets a flag, and pointerdown clears it, so a mouse click on the X is not treated as a keyboard close.</span></li>
+            <li><span><strong>Return focus.</strong> The Tokens button is focused only after the inner dialog is no longer <code>:modal</code>. Moving it earlier loses the focus to the top layer, which parks it on the dialog shell. A pointer close blurs the button if focus was left there, so a mouse user does not keep a focus ring.</span></li>
+          </ol>
+          <p>A <code>focusin</code> listener pulls focus back if it leaves the pane. It does not fight focus that is already on the Tokens button, which is what lets the keyboard restore finish.</p>
+        </div>
+
+        <div class="case-section">
+          <h2>What transfers</h2>
+          <p>A headless component set is only as good as the token contract in front of it. I theme Charm by overriding that contract, and I fill the accessibility gap the installed dialog leaves open instead of forking the component.</p>
+          <div class="card-links">
+            <a href="https://www.npmjs.com/package/@charm-ux/core" target="_blank" rel="noopener">npm @charm-ux/core ↗</a>
+            <a href="https://www.npmjs.com/package/@charm-ux/fui" target="_blank" rel="noopener">npm @charm-ux/fui ↗</a>
+          </div>
+        </div>
+
+        <div class="case-footer-nav">
+          <ch-button class="kh-btn-ghost" href="/#work">← Back to all work</ch-button>
+        </div>
+      </div>
+    </section>
+  </main>
+</Base>
