@@ -29,6 +29,15 @@ import Base from '../../layouts/Base.astro';
         <p><strong>Why I built it.</strong> I love cooking, and I collect recipe ideas everywhere: web pages, social media, cookbook photos. My "system" was bookmarks and screenshots, which meant scrolling through hundreds of images every time I wanted to cook something again. The Recipe Room replaces that with one searchable place: photograph any recipe and AI extracts it into structured, editable data. It's an ongoing project, and it doubles as my proving ground for owning a system end to end: schema, API, auth, AI pipeline, and UI.</p>
       </div>
 
+      <div class="shot">
+        <figure>
+          <div class="media-frame">
+            <img src="/images/recipe-room.jpg" alt="The Recipe Room personal recipe collection, with search, sign in, and featured recipe cards" loading="lazy" />
+          </div>
+          <figcaption>fig 1. the cookbook UI: search, sign-in, and the featured collection.</figcaption>
+        </figure>
+      </div>
+
       <div class="case-section">
         <h2>System architecture</h2>
         <p>Three trust zones: the browser, my server code, and third-party services. The client never talks to OpenAI directly and never holds a privileged database key. AI calls, image uploads, and search are brokered by API routes on the server. Recipe reads and writes go from the browser to Supabase directly with the public anon key, and Postgres Row Level Security does the authorization: write policies scope rows to the signed-in user, and a few read policies expose featured recipes publicly.</p>
@@ -106,7 +115,7 @@ import Base from '../../layouts/Base.astro';
               <line class="sd-flow" x1="902" y1="150" x2="894" y2="150" marker-end="url(#arr2)"/>
               <text class="sd-flow-lbl" x="160" y="374">supabase-js · auth + recipe CRUD · RLS-enforced</text>
             </svg>
-            <figcaption>fig 1. secrets live server-side, and ownership is enforced by Row Level Security in the database, where a client bug cannot bypass it.</figcaption>
+            <figcaption>fig 2. secrets live server-side, and ownership is enforced by Row Level Security in the database, where a client bug cannot bypass it.</figcaption>
           </figure>
         </div>
       </div>

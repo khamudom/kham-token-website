@@ -1,0 +1,248 @@
+---
+import Base from "../../layouts/Base.astro";
+---
+
+<Base
+  title="CoreAI · Kham Udom"
+  description="Two projects on Microsoft CoreAI: the CoreAI Design System for Azure Developer Services portals, and vsc-ui-react for the Foundry Toolkit."
+>
+  <main id="main">
+    <section class="case-page" id="case-coreai" aria-label="Project: CoreAI">
+      <div class="wrap" style="padding-block: clamp(2.5rem, 6vw, 4rem);">
+        <ch-breadcrumb label="Breadcrumb">
+          <ch-breadcrumb-item href="/">kham.udom</ch-breadcrumb-item>
+          <ch-breadcrumb-item href="/#work">work</ch-breadcrumb-item>
+          <ch-breadcrumb-item current="page">coreai</ch-breadcrumb-item>
+        </ch-breadcrumb>
+
+        <div class="case-head">
+          <div>
+            <h1 tabindex="-1" class="case-title">CoreAI: design system &amp; toolkit UI</h1>
+            <div class="chips">
+              <ch-badge>Fluent UI</ch-badge><ch-badge>React</ch-badge><ch-badge>Storybook</ch-badge><ch-badge>MCP</ch-badge><ch-badge>Design systems</ch-badge>
+            </div>
+          </div>
+          <div class="case-actions">
+            <ch-button
+              class="kh-btn-primary"
+              href="https://commandline.microsoft.com/design-product-simplicity-seamless-ux-ui-agentic-ai-azure-developer-services-foundry/"
+              target="_blank">Microsoft article ↗</ch-button
+            >
+            <ch-button class="kh-btn-ghost" href="https://github.com/vuxhub/vsc-ui-react" target="_blank"
+              >vsc-ui-react ↗</ch-button
+            >
+          </div>
+        </div>
+
+        <div class="case-section" style="margin-top: 2rem;">
+          <p>
+            <strong>The team.</strong> CoreAI is Microsoft's organization for AI
+            platforms, developer tools, and services, including Microsoft Foundry
+            and Azure Developer Services. On that team I worked on two related
+            projects: the <strong>CoreAI Design System</strong> for internal Azure
+            Developer Services and related Azure Dev portal apps, and
+            <strong>vsc-ui-react</strong> for the Foundry Toolkit extension.
+            Accessibility is part of both.
+          </p>
+        </div>
+
+        <div class="shot">
+          <figure>
+            <div class="media-frame">
+              <img
+                src="/images/foundry.jpg"
+                alt="Microsoft Foundry landing page with the headline The AI app and agent factory"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              fig 1. Microsoft Foundry, one of the CoreAI product surfaces this work
+              supports.
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="case-section">
+          <h2>1. CoreAI Design System</h2>
+          <p>
+            Azure Developer Services and related portals already used Fluent 2 /
+            Fluent UI components, but the products still felt like separate
+            houses built from the same bricks: different navigation, create
+            flows, tables, and detail pages. The CoreAI Design System is the
+            shared layer that gives those portals common foundations without
+            forcing every product to look identical.
+          </p>
+          <p>
+            It builds on the Foundry team's design-system work and targets the
+            Azure-facing portals under CoreAI. The delivery model is for people
+            and for agents: a Figma library for designers working in the usual
+            handoff, and an MCP so coding agents and AI-assisted workflows can
+            pull the same getting-started guidance, usage examples, and pattern
+            documentation. I contribute to the React theme package, Storybook,
+            and that MCP. The theme package and MCP are internal; they are not
+            open source.
+          </p>
+          <p>
+            I was part of the cross-team v-team of designers and design
+            engineers from Foundry and Azure Developer Services that continues to
+            formalize high-impact pattern guidance for the system. Microsoft has
+            written about that work in
+            <a
+              href="https://commandline.microsoft.com/design-product-simplicity-seamless-ux-ui-agentic-ai-azure-developer-services-foundry/"
+              target="_blank"
+              rel="noopener">Designing product simplicity for the AI era</a
+            >, which names me among the contributors.
+          </p>
+          <ol class="flow-steps">
+            <li>
+              <span
+                ><strong>Problem.</strong> Shared Fluent components were not enough.
+                Independently built portals still reinvented the same product
+                patterns, which customers experience as complexity.</span
+              >
+            </li>
+            <li>
+              <span
+                ><strong>System.</strong> A CoreAI-wide framework on Fluent: theme,
+                Storybook, Figma library, and MCP, so humans and agents start from
+                the same foundations.</span
+              >
+            </li>
+            <li>
+              <span
+                ><strong>Adoption.</strong> Azure portal teams can install the
+                baseline npm package in a few days when repo access and PR review
+                are available. Public write-up: none of those portals used the
+                package in June 2026; by August more than five had it installed.</span
+              >
+            </li>
+          </ol>
+        </div>
+
+        <div class="case-section">
+          <h2>2. vsc-ui-react for Foundry Toolkit</h2>
+          <p>
+            Separately, I work with the Foundry Toolkit extension team on
+            <a href="https://github.com/vuxhub/vsc-ui-react" target="_blank" rel="noopener"
+              ><code>vsc-ui-react</code></a
+            >, the public VS Code-styled Fluent UI library that ships inside that
+            extension (1.2M+ installs). It wraps Fluent UI v9 with Griffel and
+            <code>--vscode-*</code> theme tokens so the extension picks up the
+            editor's light and dark theme. TypeScript, Vite, Storybook, and a
+            <code>prepublishOnly</code> gate of build, typecheck, lint, and Vitest.
+          </p>
+          <p>
+            My public commits, authored as
+            <a
+              href="https://github.com/vuxhub/vsc-ui-react/commits?author=khamudom"
+              target="_blank"
+              rel="noopener">khamudom</a
+            >, add components on top of Fluent and revise ones already in the set:
+          </p>
+          <ol class="flow-steps">
+            <li>
+              <span
+                ><strong>New wrappers.</strong> Checkbox, Switch, Dialog, Link,
+                SpinButton, Popover, MessageBar, Slider, Badge, Accordion, Divider,
+                Breadcrumb, and Tag. Label was co-authored.</span
+              >
+            </li>
+            <li>
+              <span
+                ><strong>API on components already there.</strong> SearchBox gained
+                outline and transparent appearances. TabList gained a primary
+                appearance, then the accent was limited to the selected tab. Button
+                gained a compact height adjustment.</span
+              >
+            </li>
+          </ol>
+        </div>
+
+        <div class="case-section">
+          <h2>Decisions in vsc-ui-react</h2>
+          <div class="principles" style="margin-top: 1.5rem;">
+            <ch-card>
+              <span class="k">decision.api</span>
+              <h3>The wrapper owns the prop</h3>
+              <p>
+                <code>VscSpinButton</code> types <code>readOnly</code> on its own
+                props, pulls it out of the rest object so it does not land on
+                Fluent's root, and passes it to the input slot. A consumer-supplied
+                input slot is merged with that, so the read-only style and the
+                caller's slot can both apply.
+              </p>
+            </ch-card>
+            <ch-card>
+              <span class="k">decision.focus</span>
+              <h3>Focus trap changes how the example closes</h3>
+              <p>
+                <code>VscPopover</code> builds on Fluent's Popover, with default and
+                brand surfaces from <code>--vscode-*</code> tokens.
+                <code>trapFocus</code> blocks outside-click dismissal, so the
+                Storybook and playground examples are controlled: Cancel and Save
+                call <code>setOpen(false)</code>. Those surfaces get accessible
+                names. Link and TabList commits include <code>:focus-visible</code>
+                treatment, and the primary tab accent stays on the selected tab when
+                it is focused.
+              </p>
+            </ch-card>
+            <ch-card>
+              <span class="k">decision.theme</span>
+              <h3>VS Code tokens, not a forked palette</h3>
+              <p>
+                Surfaces, type, and validation states read the editor's theme
+                variables. The brand popover arrow inherits the surface background,
+                which computes to <code>--vscode-button-background</code>. Motion on
+                the popover surface is disabled in the base styles to match VS Code,
+                and the prop that would turn it back on is a no-op on purpose.
+              </p>
+            </ch-card>
+          </div>
+        </div>
+
+        <div class="case-section">
+          <h2>Where it ships</h2>
+          <p>
+            The CoreAI Design System ships into Azure Developer Services and
+            related Azure Dev portal apps through the internal npm package,
+            Storybook, Figma library, and MCP. <code>vsc-ui-react</code> ships in
+            the Foundry Toolkit on the Visual Studio Marketplace.
+          </p>
+          <div class="card-links">
+            <a
+              href="https://commandline.microsoft.com/design-product-simplicity-seamless-ux-ui-agentic-ai-azure-developer-services-foundry/"
+              target="_blank"
+              rel="noopener">Microsoft article ↗</a
+            >
+            <a href="https://ai.azure.com/home" target="_blank" rel="noopener"
+              >Microsoft Foundry ↗</a
+            >
+            <a
+              href="https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio"
+              target="_blank"
+              rel="noopener">Foundry Toolkit ↗</a
+            >
+            <a href="https://www.npmjs.com/package/vsc-ui-react" target="_blank" rel="noopener"
+              >npm vsc-ui-react ↗</a
+            >
+          </div>
+        </div>
+
+        <div class="case-section">
+          <h2>What transfers</h2>
+          <p>
+            On CoreAI I help build the design system that keeps related Azure Dev
+            portals coherent, including the theme, Storybook, and MCP path so
+            people and agents use the same foundations. On the Toolkit side I put
+            VS Code theme tokens on Fluent, keep wrapper APIs honest, and ship
+            those components with Storybook and tests.
+          </p>
+        </div>
+
+        <div class="case-footer-nav">
+          <ch-button class="kh-btn-ghost" href="/#work">← Back to all work</ch-button>
+        </div>
+      </div>
+    </section>
+  </main>
+</Base>

@@ -57,6 +57,27 @@ import Base from '../../layouts/Base.astro';
       </div>
 
       <div class="case-section">
+        <h2>Decisions</h2>
+        <div class="principles" style="margin-top: 1.5rem;">
+          <ch-card>
+            <span class="k">decision.contrast</span>
+            <h3>High contrast for both libraries</h3>
+            <p>I owned the high-contrast work for FAST and for Fluent UI Web Components, and tested the components in Windows high contrast.</p>
+          </ch-card>
+          <ch-card>
+            <span class="k">decision.verify</span>
+            <h3>Checked in the tools people use</h3>
+            <p>I tested with keyboard-only navigation and with VoiceOver, Narrator, and JAWS, against the patterns in the ARIA Authoring Practices Guide. Automated checks were not the bar.</p>
+          </ch-card>
+          <ch-card>
+            <span class="k">decision.docs</span>
+            <h3>The standard had to outlive the review</h3>
+            <p>I wrote the high-contrast guidance for the open-source community and internal partners, and I built the navigation and section-header on fast.design while mentoring interns who were contributing to the site.</p>
+          </ch-card>
+        </div>
+      </div>
+
+      <div class="case-section">
         <h2>What transfers</h2>
         <p>I test with actual screen readers, VoiceOver, Narrator, and JAWS, because automated checks miss most of what matters. High contrast is the kind of work many engineers avoid, and I ended up owning it for two libraries. I mentored interns while shipping. And I documented the accessibility guidance so the standard wouldn't depend on me.</p>
       </div>

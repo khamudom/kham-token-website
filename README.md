@@ -30,20 +30,23 @@ npm run preview    # preview the production build
 ## Structure
 
 ```
-├── index.html              # page markup (home + four project views)
 ├── src/
-│   ├── main.ts             # entry: styles, charm, feature init
-│   ├── charm.ts            # the Charm components this page registers
+│   ├── pages/
+│   │   ├── index.astro                 # home
+│   │   └── work/                       # one static route per case study
+│   ├── layouts/Base.astro              # document shell, Charm styles, token boot
+│   ├── components/                     # header, footer, token drawer
+│   ├── charm.ts                        # the Charm components this site registers
+│   ├── scripts/site.ts                 # entry: token drawer + video facades
 │   ├── lib/
-│   │   ├── tokens.ts       # token drawer: theme/hue/radius, persistence, reset
-│   │   ├── router.ts       # hash router for project views
-│   │   ├── effects.ts      # scroll reveal, video facades
-│   │   └── dom.ts          # Charm element typings + strict DOM lookup
+│   │   ├── tokens.ts                   # theme, hue, radius, persistence, focus trap
+│   │   ├── effects.ts                  # scroll reveal, video facades
+│   │   └── dom.ts                      # Charm element typings + strict DOM lookup
 │   └── styles/
-│       ├── theme.css       # the Charm UX theme override (tokens only)
-│       └── site.css        # page layout
+│       ├── theme.css                   # the Charm UX theme override (tokens only)
+│       └── site.css                    # page layout
 └── public/
-    ├── images/             # project thumbnails
+    ├── images/                         # project images
     └── favicon.svg
 ```
 
